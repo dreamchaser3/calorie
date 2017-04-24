@@ -33,43 +33,9 @@
                 <li>
                     <a href="#">
                         <div>
-                            <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                            <i class="fa fa-user"></i> 3 New Friends
                             <span class="pull-right text-muted small">12 minutes ago</span>
                         </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-envelope fa-fw"></i> Message Sent
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-tasks fa-fw"></i> New Task
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
                     </a>
                 </li>
             </ul>
@@ -112,7 +78,12 @@
                 <li>
                     <a href="/"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
                 </li>
-                
+                <li>
+                    <a href="/"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
+                </li>
+                <li>
+                    <a href="/"><i class="fa fa-user fa-fw"></i> 친구 관리</a>
+                </li>
             </ul>
         </div>
         <!-- /.sidebar-collapse -->
@@ -181,11 +152,55 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <i class="fa fa-clock-o fa-fw"></i> 일일 식단 관리
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs">
+                                더 보기
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    여기에 아침, 점심, 저녁으로 등록한 사진하고 칼로리 정보를 띄울거임
-                    등록된 내용이 없으면 등록하기 버튼을 둘거임
+                    <div class="bs-example" data-example-id="thumbnails-with-custom-content"> 
+                        <div class="row"> 
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail"> 
+                                    <img alt="100%x200" data-src="holder.js/100%x200" 
+                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMmMzZDIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIyYzNkMiI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
+                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                    <div class="caption" align = "center"> 
+                                        <h3>아침</h3> 
+                                        <p>식사를 등록해주세요.</p> 
+                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <div class="col-sm-6 col-md-4"> 
+                                <div class="thumbnail"> 
+                                    <img alt="100%x200" data-src="holder.js/100%x200" 
+                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMzMyNzAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIzMzI3MCI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
+                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                    <div class="caption" align = "center"> 
+                                        <h3>점심</h3> 
+                                        <p>식사를 등록해주세요.</p> 
+                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                            <div class="col-sm-6 col-md-4"> 
+                                <div class="thumbnail"> 
+                                    <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMmU4MmUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIyZTgyZSI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
+                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                    <div class="caption" align = "center"> 
+                                        <h3>저녁</h3> 
+                                        <p>식사를 등록해주세요.</p> 
+                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -203,12 +218,11 @@
             <!-- /.panel -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> 친구들의 대시보드
+                    <i class="fa fa fa-user fa-fw"></i> 친구들의 대시보드
                     <div class="pull-right">
                         <div class="btn-group">
                             <button type="button" class="btn btn-default btn-xs">
                                 더 보기
-                                
                             </button>
                         </div>
                     </div>
@@ -216,11 +230,17 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-4">
-                            여기에 친구들 프로필 페이지로 이동하는 이미지 링크를 둘거임
-                            <!-- /.table-responsive -->
-                        </div>
-                       
+                        <div class="col-sm-4 col-md-3"> 
+                            <div class="thumbnail"> 
+                                <img alt="100%x200" data-src="holder.js/100%x200" 
+                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMzMyNzAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIzMzI3MCI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
+                                data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                <div class="caption" align = "center"> 
+                                    <h4><strong><a href = "">친구 닉네임</a></strong></h4> 
+                                    <p>잉잉</p> 
+                                </div> 
+                            </div> 
+                        </div> 
                     </div>
                     <!-- /.row -->
                 </div>
@@ -231,11 +251,32 @@
         </div>
     </div>
     <!-- /.row -->
+    
 </div>
 <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
+      </div>
+      <div class="modal-body">
+        여기에 음식 사진을 등록할 수 있는 버튼과 제대로 인식 안되었을 때 수동으로 입력할 수 있는 인풋필드와 기타 등등..
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+        <button type="button" class="btn btn-primary">등록!</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
     new Morris.Area({
   // ID of the element in which to draw the chart.
