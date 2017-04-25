@@ -22,7 +22,7 @@
             </a>
             <ul class="dropdown-menu dropdown-alerts">
                 <li>
-                    <a href="#">
+                    <a href="/home/board">
                         <div>
                             <i class="fa fa-comment fa-fw"></i> New Comment
                             <span class="pull-right text-muted small">4 minutes ago</span>
@@ -31,7 +31,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                    <a href="#">
+                    <a href="/home/friends">
                         <div>
                             <i class="fa fa-user"></i> 3 New Friends
                             <span class="pull-right text-muted small">12 minutes ago</span>
@@ -68,7 +68,7 @@
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" placeholder="친구 email...">
                         <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">
+                        <button class="btn btn-default" type="button" data-toggle="modal" data-target="#myModal_finding_friends">
                             찾기!
                         </button>
                     </span>
@@ -79,10 +79,10 @@
                     <a href="/"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
                 </li>
                 <li>
-                    <a href="/"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
+                    <a href="/home/board"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
                 </li>
                 <li>
-                    <a href="/"><i class="fa fa-user fa-fw"></i> 친구 관리</a>
+                    <a href="/home/friends"><i class="fa fa-user fa-fw"></i> 친구 관리</a>
                 </li>
             </ul>
         </div>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/home/friends">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -135,7 +135,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="#">
+                <a href="/home/board">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -154,7 +154,7 @@
                     <i class="fa fa-clock-o fa-fw"></i> 일일 식단 관리
                     <div class="pull-right">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-xs">
+                            <button onclick = "location.href = '/home/board' " type="button" class="btn btn-default btn-xs">
                                 더 보기
                             </button>
                         </div>
@@ -221,7 +221,7 @@
                     <i class="fa fa fa-user fa-fw"></i> 친구들의 대시보드
                     <div class="pull-right">
                         <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-xs">
+                            <button onclick = "location.href = '/home/friends' " type="button" class="btn btn-default btn-xs">
                                 더 보기
                             </button>
                         </div>
@@ -273,6 +273,25 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
         <button type="button" class="btn btn-primary">등록!</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal(finding friends) -->
+<div class="modal fade" id="myModal_finding_friends" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">친구 찾기</h4>
+      </div>
+      <div class="modal-body">
+        여기에 해당 이메일 검색 결과를 보여줌
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
       </div>
     </div>
   </div>
