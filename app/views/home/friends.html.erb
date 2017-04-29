@@ -59,7 +59,7 @@
         <!-- /.dropdown -->
     </ul>
     <!-- /.navbar-top-links -->
-
+    
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
@@ -89,6 +89,54 @@
     </div>
     <!-- /.navbar-static-side -->
 </nav>
+
+<!-- Modal(finding friends) -->
+<div class="modal fade" id="myModal_finding_friends" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">친구 찾기</h4>
+      </div>
+      <div class="modal-body"> 
+          <div class="panel panel-default">
+                 <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-user-o" aria-hidden="true"></i>    친구</h3>
+                 </div>
+                 <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left media-top">
+                           <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                           </a>
+                        </div>
+                    <div class="media-body">
+                            <div style="margin-top:10px">
+                                  <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                  <div class="pull-right">
+                                    <button onclick="" type="button" class="btn" style="width:80pt;height:19pt;">
+                                        <div style="color:darkslategray"><i class="fa fa-user-plus" aria-hidden="true"></i>     친구 추가</div></button>
+                                  </div>
+                                  </h4>
+                            </div>
+                            <br>  
+                           <div style='line-height:50%; color:gray'>
+                               <p>인적사항</p>
+                               <p>인적사항</p>
+                           </div>   
+                    </div>
+                    </div>
+                 </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div id="page-wrapper">
     <div class="row">
@@ -134,10 +182,9 @@
                               }
                             }
                         </style>
-                        <ul class="nav navbar-nav">
+                        <ul class="nav navbar-nav"style="font-weight:bold">
                           <li class="active"><a href="#">타임라인</a></li>
                           <li><a href="#">정보</a></li>
-                          <li><a href="#">친구</a></li>
                           <li><a href="#">식단</a></li>
                         </ul>
                      </div>
@@ -150,156 +197,236 @@
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-comments fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>새 친구 요청!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="/home/friends">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
+            <div class="panel panel-default" style="width:1467px;">
+              <div class="panel-heading" style="height:45px">
+                  <div><p style="font-size:18pt; color:#6E6E6E"><strong><i class="fa fa-telegram" aria-hidden="true"></i>   친구 요청</strong></p></div>
+              </div>
+                      <div class="panel-body">
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                    <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-primary" style="width:50pt;height:20pt;">
+                                                            <div style="color:white"><strong>    승락</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                    </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                               <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-primary" style="width:50pt;height:20pt;">
+                                                            <div style="color:white"><strong>    승락</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-primary" style="width:50pt;height:20pt;">
+                                                            <div style="color:white"><strong>    승락</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
             </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <div class="panel panel-green">
-                <div class="panel-heading">
-                    <div class="row">
-                        <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
-                        </div>
-                        <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>새 댓글!</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="/home/board">
-                    <div class="panel-footer">
-                        <span class="pull-left">View Details</span>
-                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                        <div class="clearfix"></div>
-                    </div>
-                </a>
+            
+            <div class="panel panel-default" style="width:1467px">
+              <div class="panel-heading"   style="position:relative; z-index:1;height:45px">
+                  <div  style="position:absolute; z-index:3"><p style="font-size:18pt; color:#6E6E6E"><strong><i class="fa fa-user-o" aria-hidden="true"></i>    친구</strong></p>
+                  </div>
+                  <div class="input-group" style="position:relative;z-index:2;width:200px; left:1220px">
+                      <input type="text" class="form-control" placeholder="친구 검색" aria-describedby="basic-addon2">
+                      <span class="input-group-btn"><button class="btn btn-info" type="button"><i class="fa fa-search" aria-hidden="true"></i></button></span>
+                  </div> 
+              </div>
+                  <div class="panel-body">
+                              <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
+                                                            <div style="color:gray"><strong><i class="fa fa-check" aria-hidden="true"></i>    친구</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
+                                                            <div style="color:gray"><strong><i class="fa fa-check" aria-hidden="true"></i>    친구</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
+                                                            <div style="color:gray"><strong><i class="fa fa-check" aria-hidden="true"></i>    친구</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
+                                                            <div style="color:gray"><strong><i class="fa fa-check" aria-hidden="true"></i>    친구</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default"  style="float:left;width:32.25%;margin-right:15px">
+                              <div class="panel-body">
+                                <div class="media">
+                                            <div class="media-left media-top">
+                                            <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22120%22%20height%3D%22120%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20120%20120%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15baee46773%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15baee46773%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2235.5%22%20y%3D%2264.5%22%3E120x120%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/140x140" alt='Thumbnail'>
+                                            </a>
+                                            </div>
+                                            <div class="media-body">
+                                                <div style="margin-top:10px">
+                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong>갸라도스</strong></a> 
+                                                        <div class="pull-right">
+                                                            <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
+                                                            <div style="color:gray"><strong><i class="fa fa-check" aria-hidden="true"></i>    친구</strong></div>
+                                                            </button>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <br>  
+                                                <div style='line-height:50%; color:gray'>
+                                                   <p>인적사항</p>
+                                                   <p>인적사항</p>
+                                                </div>   
+                                            </div>
+                                </div>
+                              </div>
+                          </div>
+                  </div>
             </div>
-        </div>
-        
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-clock-o fa-fw"></i> 일일 식단 관리
-                    <div class="pull-right">
-                        <div class="btn-group">
-                            <button onclick = "location.href = '/home/board' " type="button" class="btn btn-default btn-xs">
-                                더 보기
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div class="bs-example" data-example-id="thumbnails-with-custom-content"> 
-                        <div class="row"> 
-                            <div class="col-sm-6 col-md-4">
-                                <div class="thumbnail"> 
-                                    <img alt="100%x200" data-src="holder.js/100%x200" 
-                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMmMzZDIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIyYzNkMiI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
-                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
-                                    <div class="caption" align = "center"> 
-                                        <h3>아침</h3> 
-                                        <p>식사를 등록해주세요.</p> 
-                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
-                                    </div> 
-                                </div> 
-                            </div> 
-                            <div class="col-sm-6 col-md-4"> 
-                                <div class="thumbnail"> 
-                                    <img alt="100%x200" data-src="holder.js/100%x200" 
-                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMzMyNzAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIzMzI3MCI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
-                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
-                                    <div class="caption" align = "center"> 
-                                        <h3>점심</h3> 
-                                        <p>식사를 등록해주세요.</p> 
-                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
-                                    </div> 
-                                </div> 
-                            </div> 
-                            <div class="col-sm-6 col-md-4"> 
-                                <div class="thumbnail"> 
-                                    <img alt="100%x200" data-src="holder.js/100%x200" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMmU4MmUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIyZTgyZSI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
-                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
-                                    <div class="caption" align = "center"> 
-                                        <h3>저녁</h3> 
-                                        <p>식사를 등록해주세요.</p> 
-                                        <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
-                                    </div> 
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bar-chart-o fa-fw"></i> 칼로리 차트
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div id="morris-area-chart"></div>
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa fa-user fa-fw"></i> 친구들의 대시보드
-                    <div class="pull-right">
-                        <div class="btn-group">
-                            <button onclick = "location.href = '/home/friends' " type="button" class="btn btn-default btn-xs">
-                                더 보기
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-sm-4 col-md-3"> 
-                            <div class="thumbnail"> 
-                                <img alt="100%x200" data-src="holder.js/100%x200" 
-                                src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMzMyNzAgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIzMzI3MCI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
-                                data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
-                                <div class="caption" align = "center"> 
-                                    <h4><strong><a href = "">친구 닉네임</a></strong></h4> 
-                                    <p>잉잉</p> 
-                                </div> 
-                            </div> 
-                        </div> 
-                    </div>
-                    <!-- /.row -->
-                </div>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
             
         </div>
     </div>
-    <!-- /.row -->
     
-</div>
-</div>
+    
