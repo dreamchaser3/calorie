@@ -47,7 +47,11 @@
 </head>
 <body>
   <% flash.each do |key, value| %>
+<<<<<<< HEAD
   <div class="alert alert-<%= key %>"><%= value %></div>
+=======
+  <div style = "background-color: blue; color: white" class="alert alert-<%= key %>"><%= value %></div>
+>>>>>>> 5b053e9cf33de8e4d5507aeaf0670cfa97323e67
   <% end %>
    
 <%= yield %>

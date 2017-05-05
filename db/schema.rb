@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170505080003) do
+=======
+ActiveRecord::Schema.define(version: 20170505090343) do
+>>>>>>> 5b053e9cf33de8e4d5507aeaf0670cfa97323e67
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -26,6 +30,12 @@ ActiveRecord::Schema.define(version: 20170505080003) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+<<<<<<< HEAD
+=======
+    t.string   "username"
+    t.string   "background_img"
+    t.string   "profile_img"
+>>>>>>> 5b053e9cf33de8e4d5507aeaf0670cfa97323e67
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
