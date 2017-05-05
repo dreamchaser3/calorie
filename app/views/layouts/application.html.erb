@@ -43,9 +43,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="../assets/javascripts/sb-admin-2.js"></script>
+    
 </head>
 <body>
-
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+   
 <%= yield %>
 
 </body>
