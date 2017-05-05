@@ -170,7 +170,7 @@
                                     src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQzIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MyAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTViYTAyMmMzZDIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNWJhMDIyYzNkMiI+PHJlY3Qgd2lkdGg9IjI0MyIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI5MC4yODEyNSIgeT0iMTA1LjQ1MTU2MjUiPjI0M3gyMDA8L3RleHQ+PC9nPjwvZz48L3N2Zz4=" 
                                     data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                     <div class="caption" align = "center"> 
-                                        <h3>아침</h3> 
+                                        <h3>아침 </h3> 
                                         <p>식사를 등록해주세요.</p> 
                                         <p class="btn btn-primary" data-toggle="modal" data-target="#myModal" role="button">등록</p> 
                                     </div> 
@@ -268,9 +268,34 @@
         <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
       </div>
       <div class="modal-body">
-        여기에 음식 사진을 등록할 수 있는 버튼과 제대로 인식 안되었을 때 수동으로 입력할 수 있는 인풋필드와 기타 등등..
+          
+          
+
+
+ 
+  <div style="position:relative;">
+		<a class='btn btn-primary' href='javascript:;'>
+			Choose File...
+			<input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
+		</a>
+		&nbsp;
+		<span class='label label-info' id="upload-file-info"></span>
+		
+	
+		
+		<form name="myWebForm" action="mailto:youremail@email.com" method="post">
+food name: <input title="food name" id="food name" name="food name" type="text" size="12" /><br />
+about your food : <input title="about your food" id="about your food" name="about your food" type="text" size="18" /><br />
+<input type="submit" value="SUBMIT" />
+</form>
+	</div>
+
+ 
+ 
       </div>
       <div class="modal-footer">
+
+          
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
         <button type="button" class="btn btn-primary">등록!</button>
       </div>
