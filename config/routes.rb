@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
-  devise_for :users
-=======
+
   devise_for :users,  :controllers => {
     :registrations => "users/registrations",
     :sessions =>"users/sessions",
     :passwords =>"users/passwords",
     :confirmations =>"users/confirmations",}
->>>>>>> 5b053e9cf33de8e4d5507aeaf0670cfa97323e67
+
   get 'home/index'
   root 'home#index'
   get 'home/friends' => 'home#friends'
