@@ -53,9 +53,7 @@ ActiveRecord::Schema.define(version: 20170505092716) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "username"
-    t.string   "background_img"
-    t.string   "profile_img"
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
