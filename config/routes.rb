@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/friends' => 'home#friends'
   get 'home/board' => 'home#board'
+
   post '/change_profile_img' => 'home#change_profile_img'
   post '/change_background_img' => 'home#change_background_img'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

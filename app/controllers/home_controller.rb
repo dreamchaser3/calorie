@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   before_action :authenticate_user!
   def index
   end
@@ -6,6 +7,7 @@ class HomeController < ApplicationController
     @user = current_user
   end
   def board
+    
   end
   def change_profile_img
     @user = current_user
