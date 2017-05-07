@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up) {|u| u.permit(:username, :email, :password, :password_confirmation)}
   end
+  def require_login
+      unless user_signed_in?
+      redirect_to '/users/sign_in'  
+      end
+  end
 end
