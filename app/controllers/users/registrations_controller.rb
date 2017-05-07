@@ -19,9 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    @user = current_user
-    @user.username = params[:username]
-    @user.save
+    
     super
   end
 

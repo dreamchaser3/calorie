@@ -268,31 +268,20 @@
         <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
       </div>
       <div class="modal-body">
-          
-          
-
-
- 
-   <div style="position:relative;">
-		<a class='btn btn-primary' href='javascript:;'>
-			Choose File...
-			<input type="file" style='position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";opacity:0;background-color:transparent;color:transparent;' name="file_source" size="40"  onchange='$("#upload-file-info").html($(this).val());'>
-		</a>
-		&nbsp;
-		<span class='label label-info' id="upload-file-info"></span>
-	</div>
-		
-	
-		
-		<textarea name="textarea" rows="10" cols="50">about your food.</textarea>
-
-
- 
- 
+        <form action ="/write" method="POST" enctype="multipart/form-data">
+            <div>
+                <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
+        		<textarea style="margin-left: 20px;" name="textarea" rows="5" cols="60" 
+        		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
+    		</div>
+    		<div style="margin-top: 25px;">
+                <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+    			<input type="file" name="pic" accept="image/*">
+			</div>
+		</form>
+       
       </div>
       <div class="modal-footer">
-
-          
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
         <button type="button" class="btn btn-primary">등록!</button>
       </div>

@@ -146,7 +146,7 @@
                       <a href=""><div style="position: absolute;top:200px;left:270px;color:WHITE;font-size:23pt;z-index:3;"><strong>갸라도스</strong>
                       </div></a>
                       <div style="position: relative; z-index: 1;">
-                             <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%221200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15bb38e2070%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A60pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15bb38e2070%22%3E%3Crect%20width%3D%221200%22%20height%3D%22200%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22422.03125%22%20y%3D%22126.7%22%3E1200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+                             <img src="<%=@user.background_img%>"
                                   data-src="holder.js/1200x200" style="width:100%;height:250px" alt:"background image">
                       </div>
                       
@@ -154,13 +154,13 @@
                           <a href:""><button class="btn btn-default" type="button"><i class="fa fa-pencil" aria-hidden="true"></i>   프로필 수정</button></a>
                           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="float:right"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></button>
                              <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">프로필 사진 바꾸기</a></li>
-                                <li><a href="#">배경 사진 바꾸기</a></li>
+                                <li><a href = "#change_profile_img"data-toggle="modal">프로필 사진 바꾸기</a></li>
+                                <li><a href="#change_background_img"data-toggle="modal">배경 사진 바꾸기</a></li>
                              </ul>
                       </div>  
                       <div style="position: absolute; top: 100px; left:40px;z-index: 2;border-style:solid; border-color:white">
-                        <a href=""><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15bb35dd8e0%20text%20%7B%20fill%3A%23AAAAAA%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15bb35dd8e0%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2275.5%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-src="holder.js/200x200" 
-                                    alt="profile image"></a>
+                        <a href=""><img src="<%=@user.profile_img%>" data-src="holder.js/200x200" 
+                                    style="width:200px;height:200px" alt="profile image"></a>
                       </div>
               </li>
               <li class="list-group-item" style="height:55px">
@@ -428,5 +428,37 @@
             
         </div>
     </div>
-    
+</div>    
+<!-- change profile image modal -->
+<div class="modal fade" id="change_profile_img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+            <form action="/change_profile_img" method='post'>
+              <div class="form-group">
+                <label for="exampleInputEmail1">이미지 url을 입력해주세요.</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="url..." name="img">
+                <button type="submit" class="btn btn-default">확인</button>
+              </div>
+            </form>
+      </div>
+    </div>
+   </div>
+</div>
+<!-- change background image modal -->
+<div class="modal fade" id="change_background_img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+            <form action="/change_background_img" method='post'>
+              <div class="form-group">
+                <label for="exampleInputEmail1">이미지 url을 입력해주세요.</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="url..." name="img">
+                <button type="submit" class="btn btn-default">확인</button>
+              </div>
+            </form>
+      </div>
+    </div>
+   </div>
+</div>
     
