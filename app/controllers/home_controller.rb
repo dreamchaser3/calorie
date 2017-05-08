@@ -8,7 +8,6 @@ class HomeController < ApplicationController
     @alluser=User.all
     @allfriend=UserFriend.all
     @user = current_user
-    # @friend=User.find_by(email:params[:find_friend])
   end
   
   def board
@@ -32,4 +31,12 @@ class HomeController < ApplicationController
     @friend.save
     redirect_to '/home/friends'
   end
+  def do_friend
+      @user=current_user
+      @touser=User.find_by(email:params[:find_friend])
+      if @touser==nil
+            redirect_to '/home/index'
+      end
+  end
+  
 end
