@@ -6,6 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email:'wondangjk@naver.com',password:"123456",username:"박세환",background_img:"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles13.naver.net%2F20150925_251%2Fyoojasisters_14431536519993qy99_JPEG%2F%25B7%25B9%25C0%25CF%25C1%25EE%25BC%25C5%25C3%25F7__%25283%2529.jpg&type=b400",
-            profile_img:"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles13.naver.net%2F20150925_251%2Fyoojasisters_14431536519993qy99_JPEG%2F%25B7%25B9%25C0%25CF%25C1%25EE%25BC%25C5%25C3%25F7__%25283%2529.jpg&type=b400")
-User.create(email:'dreamchaser3@naver.com',password:"123456",username:"서유정",background_img:"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles13.naver.net%2F20150925_251%2Fyoojasisters_14431536519993qy99_JPEG%2F%25B7%25B9%25C0%25CF%25C1%25EE%25BC%25C5%25C3%25F7__%25283%2529.jpg&type=b400",profile_img:"https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles13.naver.net%2F20150925_251%2Fyoojasisters_14431536519993qy99_JPEG%2F%25B7%25B9%25C0%25CF%25C1%25EE%25BC%25C5%25C3%25F7__%25283%2529.jpg&type=b400")            
+User.create(email:'wondangjk@naver.com',password:"123456",username:"박세환",background_img:"http://blogfiles5.naver.net/20131221_38/hosungkwang_1387622849957N4OVg_JPEG/tumblr_lpi0w6LNDU1qkblnro1_500.jpg",
+            profile_img:"http://cafefiles.naver.net/20100811_59/qlcsk9106_1281528614869sl0z6_jpg/cy-01063607984_ed98b8ec95bc_5_qlcsk9106.jpg")
+User.create(email:'dreamchaser3@naver.com',password:"123456",username:"서유정",background_img:"http://cafefiles.naver.net/20130501_85/hiyo_o__13674100081975IVsD_JPEG/-1568620571.jpg",
+            profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")         
+User.create(email:'kimhyunwoo@naver.com',password:"123456",username:"김현우",background_img:"http://cafefiles.naver.net/20130501_85/hiyo_o__13674100081975IVsD_JPEG/-1568620571.jpg",
+            profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")        
+User.create(email:'ohhyunju@naver.com',password:"123456",username:"오현주",background_img:"http://cafefiles.naver.net/20130501_85/hiyo_o__13674100081975IVsD_JPEG/-1568620571.jpg",
+            profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")
+UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"dreamchaser3@naver.com",status:1)
+UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:1)
+UserFriend.create(user_email:'ohhyunju@naver.com',friend_email:"wondangjk@naver.com",status:0)
+UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:0)

@@ -3,9 +3,13 @@ class HomeController < ApplicationController
   before_action :authenticate_user!
   def index
   end
+  
   def friends
+    @alluser=User.all
+    @allfriend=UserFriend.all
     @user = current_user
   end
+  
   def board
     
   end
@@ -20,5 +24,13 @@ class HomeController < ApplicationController
     @user.background_img = params[:img]
     @user.save
     redirect_to '/home/friends'
+  end
+  def make_friend
+    @friend=UserFriend.find(params[:friend_id])
+    @friend.status=1
+    @friend.save
+    redirect_to '/home/friends'
+    
+    
   end
 end
