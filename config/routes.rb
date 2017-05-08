@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/friends' => 'home#friends'
   get 'home/board' => 'home#board'
-
+  get 'home/do_friend' => 'home#do_friend'
+  
   post '/change_profile_img' => 'home#change_profile_img'
   post '/change_background_img' => 'home#change_background_img'
   post '/make_friend/:friend_id'=>'home#make_friend'
