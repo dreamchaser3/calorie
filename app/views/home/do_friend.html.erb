@@ -64,7 +64,7 @@
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li class="sidebar-search">
-                    <form action='/do_friend' method='post'>
+                    <form action='/do_friend' method='get'>
                     <div class="input-group custom-search-form">
                         <input type="text" class="form-control" name="find_friend" placeholder="친구 email...">
                         <span class="input-group-btn">
@@ -106,11 +106,42 @@
         <div class='panel panel-info'>
             <div class='panel panel-heading' style="margin-bottom:0px; height:50px">
             <p style="font-size:15pt;position:relative;z-index:0"><i class="fa fa-question-circle" aria-hidden="true"></i>   찾으신 분이 맞습니까?</p> 
+               <%if @user.email==@touser.email%>
                 <form>
+                    <div class="btn-group" style="position:absolute;top:60px; right:90px;z-index:3;">
+                        <button class="btn btn-success" type="button">   본 인</button>
+                    </div>
+                </form>
+                <%else%>
+                <%if @relation.status==2%>
+                <form action='/bemyfr/<%=@user.id%>/<%=@touser.id%>' method='post'>
                     <div class="btn-group" style="position:absolute;top:60px; right:90px;z-index:3;">
                         <button class="btn btn-success" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i>   친구 추가</button>
                     </div>
                 </form>
+                <%end%>
+                <%if @relation.status==1%>
+                <form>
+                    <div class="btn-group" style="position:absolute;top:60px; right:90px;z-index:3;">
+                        <button class="btn btn-success" type="button"><i class="fa fa-check" aria-hidden="true"></i>   친구</button>
+                    </div>
+                </form>
+                <%end%>
+                <%if @relation.status==0&&@relation.user_email==@user.email%>
+                <form>
+                    <div class="btn-group" style="position:absolute;top:60px; right:90px;z-index:3;">
+                        <button class="btn btn-success" type="button"><i class="fa fa-spinner" aria-hidden="true"></i>   친구 요청 중</button>
+                    </div>
+                </form>
+                <%end%>
+                <%if @relation.status==0&&@relation.user_email==@touser.email%>
+                <form action='/make_friend2/<%=@touser.id%>/<%=@user.id%>' method='post'>
+                    <div class="btn-group" style="position:absolute;top:60px; right:90px;z-index:3;">
+                        <button class="btn btn-success" type="submit">   승락</button>
+                    </div>
+                </form>
+                <%end%>
+                <%end%>
             </div>
             <div class='panel' style="margin-bottom:0px">
             <li class="list-group-item">

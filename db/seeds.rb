@@ -17,4 +17,3 @@ User.create(email:'ohhyunju@naver.com',password:"123456",username:"오현주",ba
 UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"dreamchaser3@naver.com",status:1)
 UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:1)
 UserFriend.create(user_email:'ohhyunju@naver.com',friend_email:"wondangjk@naver.com",status:0)
-UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:0)
