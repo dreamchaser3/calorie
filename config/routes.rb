@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/make_friend/:friend_id'=>'home#make_friend'
   post '/make_friend2/:touser_id/:user_id' =>'home#make_friend2'
   post '/bemyfr/:user_id/:touser_id'=>'home#bemyfr'
+  post '/bemyfr2/:user_id/:touser_id'=>'home#bemyfr2'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
