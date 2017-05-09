@@ -15,6 +15,7 @@ User.create(email:'kimhyunwoo@naver.com',password:"123456",username:"김현우",
 User.create(email:'ohhyunju@naver.com',password:"123456",username:"오현주",background_img:"http://cafefiles.naver.net/20130501_85/hiyo_o__13674100081975IVsD_JPEG/-1568620571.jpg",
             profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")
 UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"dreamchaser3@naver.com",status:1)
+UserFriend.create(user_email:'dreamchaser3@naver.com',friend_email:"wondangjk@naver.com",status:1)
 UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:1)
 UserFriend.create(user_email:'ohhyunju@naver.com',friend_email:"wondangjk@naver.com",status:0)
 UserFriend.create(user_email:'wondangjk@naver.com',friend_email:"kimhyunwoo@naver.com",status:0)

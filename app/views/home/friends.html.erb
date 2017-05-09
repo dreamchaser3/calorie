@@ -21,10 +21,9 @@
             </a>
             <ul class="dropdown-menu dropdown-alerts">
                 <li>
-                    <a href="/home/board">
+                    <a href="/home/board/<%=current_user.id%>">
                         <div>
                             <i class="fa fa-comment fa-fw"></i> New Comment
-                            <span class="pull-right text-muted small">4 minutes ago</span>
                         </div>
                     </a>
                 </li>
@@ -32,8 +31,7 @@
                 <li>
                     <a href="/home/friends">
                         <div>
-                            <i class="fa fa-user"></i> 3 New Friends
-                            <span class="pull-right text-muted small">12 minutes ago</span>
+                            <i class="fa fa-user"></i> New Friends
                         </div>
                     </a>
                 </li>
@@ -46,9 +44,7 @@
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                <li><a href="/home/friends"><i class="fa fa-user fa-fw"></i> User Profile</a>
                 </li>
                 <li class="divider"></li>
                 <li><a href="/users/sign_out"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -59,6 +55,7 @@
         <!-- /.dropdown -->
     </ul>
     <!-- /.navbar-top-links -->
+
     
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
@@ -80,7 +77,7 @@
                     <a href="/"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
                 </li>
                 <li>
-                    <a href="/home/board"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
+                    <a href="/home/board/<%=current_user.id%>"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
                 </li>
                 <li>
                     <a href="/home/friends"><i class="fa fa-user fa-fw"></i> 친구 관리</a>
