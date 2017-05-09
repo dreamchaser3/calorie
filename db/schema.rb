@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170505092716) do
+ActiveRecord::Schema.define(version: 20170509072937) do
 
   create_table "posts", force: :cascade do |t|
-    t.string   "img",                                 null: false
     t.string   "title"
     t.string   "content"
     t.integer  "category",                            null: false
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170505092716) do
     t.decimal  "calorie",    precision: 10, scale: 2
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "image"
   end
 
   create_table "replies", force: :cascade do |t|

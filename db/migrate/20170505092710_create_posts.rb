@@ -1,7 +1,7 @@
 class CreatePosts < ActiveRecord::Migration
   def change
     create_table :posts do |t|
-      t.string :img, null: false
+      
       t.string :title, null: true
       t.string :content, null: true
       # category: 0->아침, 1->점심, 2->저녁
