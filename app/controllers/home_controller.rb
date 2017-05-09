@@ -82,7 +82,7 @@ class HomeController < ApplicationController
           end
           @relation.save
        end
-      end
+      
       
       @touser_friend_1=UserFriend.where(user_email:@touser.email)
       @touser_friend_2=UserFriend.where(friend_email:@touser.email)
@@ -244,6 +244,7 @@ class HomeController < ApplicationController
             end
           end  
                 
+      end
       end
   end
   

@@ -166,7 +166,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <%@allfriend.each do |f|%>
-                            <%if f.friend_email!=@touser.email && f.status==2%>
+                            <%if f.friend_email !=@touser.email &&f.status==2%>
                             <form action='/bemyfr2/<%=@user.id%>/<%=@alluser.find_by(email:f.friend_email).id%>' method='post'>
                             <div class="col-sm-4 col-md-3">
                                 <div class="thumbnail"> 
