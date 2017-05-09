@@ -5,8 +5,11 @@ class HomeController < ApplicationController
   end
   
   def friends
+    @alluser=User.all
+    @allfriend=UserFriend.all
     @user = current_user
   end
+  
   def board
     
   end
@@ -24,6 +27,7 @@ class HomeController < ApplicationController
     @user.save
     redirect_to '/home/friends'
   end
+
   # modal category, title, 
   def write_post
     category_array = ["아침", "점심", "저녁"]
@@ -36,4 +40,19 @@ class HomeController < ApplicationController
     @post.save!
     redirect_to '/'
   end
+
+  def make_friend
+    @friend=UserFriend.find(params[:friend_id])
+    @friend.status=1
+    @friend.save
+    redirect_to '/home/friends'
+  end
+  def do_friend
+      @user=current_user
+      @touser=User.find_by(email:params[:find_friend])
+      if @touser==nil
+            redirect_to '/home/index'
+      end
+  end
+
 end
