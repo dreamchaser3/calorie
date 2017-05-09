@@ -14,12 +14,9 @@ Rails.application.routes.draw do
   post '/do_friend' => 'home#do_friend'
   post '/change_profile_img' => 'home#change_profile_img'
   post '/change_background_img' => 'home#change_background_img'
-<<<<<<< HEAD
   post '/write_post/:category' => 'home#write_post'
-=======
   post '/make_friend/:friend_id'=>'home#make_friend'
 
->>>>>>> 677860e2c7cdee313583d8f091dac89e03d52bb5
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
