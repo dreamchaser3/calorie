@@ -1,12 +1,38 @@
 class HomeController < ApplicationController
 
   before_action :authenticate_user!
+  
   def index
     @posts = Post.where(:user_email => current_user.email).group_by {|c| c.created_at.to_date}
     @breakfast= nil
     @lunch = nil
     @dinner = nil
     
+    @test1 = "2017-04-23"
+    @test2 = 100
+    
+    @data = Hash.new
+    
+    calories = []
+    
+    @posts.keys.each do |k|
+      @posts[k].each do |p|
+        date = p.created_at.strftime("%Y-%m-%d")
+        calories[p.category] = p.calorie
+        @data[date] = calories
+      end
+    end
+    @data_keys = @data.keys
+    
+    @results = []
+    @data_keys.each do |k|
+      a = {}
+      a['date'] = k
+      a['breakfast'] = @data[k][0]
+      a['lunch'] = @data[k][1]
+      a['dinner'] = @data[k][2]
+      @results.push(a)
+    end
     if !@posts[Date.today].nil?
       @posts[Date.today].each do |p|
         if p.category == 0

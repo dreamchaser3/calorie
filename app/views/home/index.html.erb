@@ -254,7 +254,7 @@
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
-                    
+                     <div id="morris-area-chart"></div>
                 </div>
                 <!-- /.panel-body -->
             </div>
@@ -405,3 +405,23 @@
     </div>
   </div>
 </div>
+
+<script>
+    var array = <%= raw @results.to_json %>;
+    
+    new Morris.Area({
+  // ID of the element in which to draw the chart.
+  element: 'morris-area-chart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: array,
+  xLabels: "day",
+  // The name of the data record attribute that contains x-values.
+  xkey: 'date',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['breakfast', 'lunch', 'dinner'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['총 칼로리 양(아침)', '총 칼로리 양(점심)','총 칼로리 양(저녁)']
+});
+</script>
