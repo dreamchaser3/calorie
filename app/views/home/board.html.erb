@@ -109,7 +109,8 @@
                             <div style="font-size:14pt;line-height:35px;color:black;margin-left:70px"><%=@user.username%>
                             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=p.title%>
                             </div>
-                            <span style="color:gray;margin-left:10px"><%=p.created_at%></span>
+                            <span style="color:gray;margin-left:10px">
+                                <%=p.created_at.strftime("%Y-%m-%d")%> <%=p.created_at.strftime("%H:%M")%></span>
                         </div>
                         <!-- panel body-->
                         <div class="panel" style="margin-top:0px;margin-bottom:0px">
@@ -129,9 +130,11 @@
                                         <img src="<%=@u.profile_img%>" class="img" alt="head" 
                                         style="height:45px;width:45px;float:left">
                                         <a href="/home/board/<%=@u.id%>">
-                                            <div style="font-size:11pt;line-height:20px;margin-left:50px">
+                                            <div style="font-size:11pt;line-height:20px;margin-left:10px; float:left">
                                                 <strong><%=r.user_email%></strong></div></a>
-                                        <span style="color:black;margin-left:5px; font-size:9pt"><strong><%=r.content%></strong></span><hr>
+                                            <div style="font-size:11pt;line-height:20px;margin-right:50px; float: right">
+                                                <%=r.created_at.strftime("%Y-%m-%d")%> <%=r.created_at.strftime("%H:%M")%></div>  <hr>
+                                        <span style="color:black;margin-left:10px; font-size:9pt"><strong><%=r.content%></strong></span><hr>
                                     </div>
                                 <% end%> 
                             </div>
@@ -175,7 +178,7 @@
         data: { content: reply_content, id: post_id, user_email: user_email, status: 1},
         
         success: function(){
-          $("#reply_" + post_id).append("<div class=\"panel-heding\"><img src=\""+ profile_img + "\" class=\"img\" alt=\"head\"style=\"height:45px;width:45px;float:left\"><a href=\"/home/board/<%=@u.id%>\"><div style=\"font-size:11pt;line-height:20px;margin-left:50px\"><strong>" + user_email + "</strong></div></a><span style=\"color:black;margin-left:5px; font-size:9pt\"><strong>" + reply_content + "</strong></span><hr></div>");
+          $("#reply_" + post_id).append("<div class=\"panel-heding\"><img src=\""+ profile_img + "\" class=\"img\" alt=\"head\"style=\"height:45px;width:45px;float:left\"><a href=\"/home/board/<%=@u.id%>\"><div style=\"font-size:11pt;line-height:20px;margin-left:10px; float:left\"><strong>" + user_email + "</strong></div></a><div style=\"font-size:11pt;line-height:20px;margin-right:50px; float: right\">방금 전</div><hr><span style=\"color:black;margin-left:10px; font-size:9pt\"><strong>" + reply_content + "</strong></span><hr></div>");
           $("#content_" + post_id).val('');
         },
         error: function(){
