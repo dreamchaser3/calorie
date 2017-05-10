@@ -100,147 +100,155 @@ class HomeController < ApplicationController
           if @touser_friend_1!=nil && @touser_friend_2!=nil
             if @touser_friend_1.length >= @touser_friend_2.length
                 @touser_friend_1.each do |to1|
-                  if @sejong!=nil && @daewang!=nil 
-                     @temp=@sejong.find_by(friend_email:to1.friend_email)
-                     if @temp==nil
-                          @add=@daewang.find_by(user_email:to1.friend_email)
-                          if @add==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
-                          end
-                     end
-                     @temp2=@daewang.find_by(user_email:to1.friend_email)
-                       if @temp2==nil
-                         @add2=@sejong.find_by(friend_email:to1.friend_email)
-                         if @add2==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
+                    if to1.friend_email!=@user.email
+                      if @sejong!=nil && @daewang!=nil 
+                         @temp=@sejong.find_by(friend_email:to1.friend_email)
+                         if @temp==nil
+                              @add=@daewang.find_by(user_email:to1.friend_email)
+                              if @add==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                              end
                          end
-                       end 
-                  else  
-                      if @sejong==nil
-                        @temp=@daewang.find_by(user_email:to1.friend_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
-                        end
-                      else
-                        @temp=@sejong.find_by(friend_email:to1.friend_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email, status:2)
-                            @edo.save
-                        end
-                      end
-                  end  
+                         @temp2=@daewang.find_by(user_email:to1.friend_email)
+                           if @temp2==nil
+                             @add2=@sejong.find_by(friend_email:to1.friend_email)
+                             if @add2==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                             end
+                           end 
+                      else  
+                          if @sejong==nil
+                            @temp=@daewang.find_by(user_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                            end
+                          else
+                            @temp=@sejong.find_by(friend_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email, status:2)
+                                @edo.save
+                            end
+                          end
+                      end  
+                    end  
                 end
             else
                 @touser_friend_2.each do |to2|
-                  if @sejong!=nil && @daewang!=nil 
-                     @temp=@sejong.find_by(friend_email:to2.user_email)
-                     if @temp==nil
-                          @add=@daewang.find_by(user_email:to2.user_email)
-                          if @add==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
-                          end
-                     end
-                     @temp2=@daewang.find_by(user_email:to2.user_email)
-                       if @temp2==nil
-                         @add2=@sejong.find_by(friend_email:to2.user_email)
-                         if @add2==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
+                    if to2.user_email!=@user.email
+                      if @sejong!=nil && @daewang!=nil 
+                         @temp=@sejong.find_by(friend_email:to2.user_email)
+                         if @temp==nil
+                              @add=@daewang.find_by(user_email:to2.user_email)
+                              if @add==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                              end
                          end
-                       end 
-                  else  
-                      if @sejong==nil
-                        @temp=@daewang.find_by(user_email:to2.user_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
-                        end
-                      else
-                        @temp=@sejong.find_by(friend_email:to2.user_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
-                            @edo.save
-                        end
-                      end
-                  end  
+                         @temp2=@daewang.find_by(user_email:to2.user_email)
+                           if @temp2==nil
+                             @add2=@sejong.find_by(friend_email:to2.user_email)
+                             if @add2==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                             end
+                           end 
+                      else  
+                          if @sejong==nil
+                            @temp=@daewang.find_by(user_email:to2.user_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                            end
+                          else
+                            @temp=@sejong.find_by(friend_email:to2.user_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
+                                @edo.save
+                            end
+                          end
+                      end  
+                    end  
                 end
             end
           else
             if @touser_friend_2==nil
               @touser_friend_1.each do |to1|
-                  if @sejong!=nil && @daewang!=nil 
-                     @temp=@sejong.find_by(friend_email:to1.friend_email)
-                     if @temp==nil
-                          @add=@daewang.find_by(user_email:to1.friend_email)
-                          if @add==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
-                          end
-                     end
-                     @temp2=@daewang.find_by(user_email:to1.friend_email)
-                       if @temp2==nil
-                         @add2=@sejong.find_by(friend_email:to1.friend_email)
-                         if @add2==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
+                    if to1.friend_email!=@user.email
+                      if @sejong!=nil && @daewang!=nil 
+                         @temp=@sejong.find_by(friend_email:to1.friend_email)
+                         if @temp==nil
+                              @add=@daewang.find_by(user_email:to1.friend_email)
+                              if @add==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                              end
                          end
-                       end 
-                  else  
-                      if @sejong==nil
-                        @temp=@daewang.find_by(user_email:to1.friend_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
-                            @edo.save
-                        end
-                      else
-                        @temp=@sejong.find_by(friend_email:to1.friend_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email, status:2)
-                            @edo.save
-                        end
-                      end
-                  end  
-                end
+                         @temp2=@daewang.find_by(user_email:to1.friend_email)
+                           if @temp2==nil
+                             @add2=@sejong.find_by(friend_email:to1.friend_email)
+                             if @add2==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                             end
+                           end 
+                      else  
+                          if @sejong==nil
+                            @temp=@daewang.find_by(user_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                            end
+                          else
+                            @temp=@sejong.find_by(friend_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email, status:2)
+                                @edo.save
+                            end
+                          end
+                      end  
+                    end
+               end
             end
             if @touser_friend_1==nil
-              @touser_friend_2.each do |to2|
-                  if @sejong!=nil && @daewang!=nil 
-                     @temp=@sejong.find_by(friend_email:to2.user_email)
-                     if @temp==nil
-                          @add=@daewang.find_by(user_email:to2.user_email)
-                          if @add==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
-                          end
-                     end
-                     @temp2=@daewang.find_by(user_email:to2.user_email)
-                       if @temp2==nil
-                         @add2=@sejong.find_by(friend_email:to2.user_email)
-                         if @add2==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
-                         end
-                       end 
-                  else  
-                      if @sejong==nil
-                        @temp=@daewang.find_by(user_email:to2.user_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
-                            @edo.save
-                        end
-                      else
-                        @temp=@sejong.find_by(friend_email:to2.user_email)
-                        if @temp==nil
-                            @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
-                            @edo.save
-                        end
-                      end
-                  end  
-                end
+                  @touser_friend_2.each do |to2|
+                       if to2.user_email!=@user.email
+                          if @sejong!=nil && @daewang!=nil 
+                             @temp=@sejong.find_by(friend_email:to2.user_email)
+                             if @temp==nil
+                                  @add=@daewang.find_by(user_email:to2.user_email)
+                                  if @add==nil
+                                    @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                    @edo.save
+                                  end
+                             end
+                             @temp2=@daewang.find_by(user_email:to2.user_email)
+                               if @temp2==nil
+                                 @add2=@sejong.find_by(friend_email:to2.user_email)
+                                 if @add2==nil
+                                    @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                    @edo.save
+                                 end
+                               end 
+                          else  
+                              if @sejong==nil
+                                @temp=@daewang.find_by(user_email:to2.user_email)
+                                if @temp==nil
+                                    @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                    @edo.save
+                                end
+                              else
+                                @temp=@sejong.find_by(friend_email:to2.user_email)
+                                if @temp==nil
+                                    @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
+                                    @edo.save
+                                end
+                              end
+                          end  
+                       end  
+                  end
             end
           end  
                 
@@ -272,6 +280,16 @@ class HomeController < ApplicationController
       @touser=User.find(params[:touser_id])
       @temp=UserFriend.where(user_email:@user.email)
       @relation=@temp.find_by(friend_email:@touser.email)
+      @relation.status=0
+      @relation.save
+      
+      redirect_to :back
+  end
+  def bemyfr3
+      @user=User.find(params[:user_id])
+      @touser=User.find(params[:touser_id])
+      @temp=UserFriend.where(user_email:@touser.email)
+      @relation=@temp.find_by(friend_email:@user.email)
       @relation.status=0
       @relation.save
       
