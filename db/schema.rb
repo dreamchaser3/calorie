@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 20170509072937) do
   end
 
   create_table "replies", force: :cascade do |t|
-    t.string   "content",    null: false
-    t.integer  "post_id",    null: false
-    t.string   "user_email", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "content",                null: false
+    t.integer  "post_id",                null: false
+    t.string   "user_email",             null: false
+    t.integer  "status",     default: 1, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "user_friends", force: :cascade do |t|

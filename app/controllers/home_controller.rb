@@ -2,6 +2,21 @@ class HomeController < ApplicationController
 
   before_action :authenticate_user!
   def index
+    @posts = Post.where(:user_email => current_user.email).group_by {|c| c.created_at.to_date}
+    @breakfast= nil
+    @lunch = nil
+    @dinner = nil
+    if !@posts[Date.today].nil?
+      @posts[Date.today].each do |p|
+        if p.category == 0
+          @breakfast = p
+        elsif p.category == 1
+          @lunch = p
+        else
+          @dinner = p
+        end
+      end
+    end
   end
   
   def friends
@@ -11,6 +26,14 @@ class HomeController < ApplicationController
   end
   
   def board
+    @u = current_user
+    @user = User.find(params[:id].to_i)
+    Post.where(:user_email => @user.email).each do |p|
+      Reply.where(:post_id => p.id).each do |r|
+        r.status = 0
+        r.save
+      end  
+    end
     
   end
   
@@ -296,4 +319,12 @@ class HomeController < ApplicationController
       redirect_to :back
   end
 
+  def write_reply
+    @reply = Reply.new(content: params[:content], post_id: params[:id], user_email: params[:user_email], status: params[:status])
+        if @reply.save
+            redirect_to :back
+        else
+            alert("error")
+        end
+  end
 end

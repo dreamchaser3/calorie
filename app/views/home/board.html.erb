@@ -21,10 +21,9 @@
             </a>
             <ul class="dropdown-menu dropdown-alerts">
                 <li>
-                    <a href="/home/board">
+                    <a href="/home/board/<%=current_user.id%>">
                         <div>
                             <i class="fa fa-comment fa-fw"></i> New Comment
-                            <span class="pull-right text-muted small">4 minutes ago</span>
                         </div>
                     </a>
                 </li>
@@ -32,8 +31,7 @@
                 <li>
                     <a href="/home/friends">
                         <div>
-                            <i class="fa fa-user"></i> 3 New Friends
-                            <span class="pull-right text-muted small">12 minutes ago</span>
+                            <i class="fa fa-user"></i> New Friends
                         </div>
                     </a>
                 </li>
@@ -46,9 +44,7 @@
                 <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                <li><a href="/home/friends"><i class="fa fa-user fa-fw"></i> User Profile</a>
                 </li>
                 <li class="divider"></li>
                 <li><a href="/users/sign_out"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -80,7 +76,7 @@
                     <a href="/"><i class="fa fa-dashboard fa-fw"></i> 대시보드</a>
                 </li>
                 <li>
-                    <a href="/home/board"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
+                    <a href="/home/board/<%=current_user.id%>"><i class="fa fa-clock-o fa-fw"></i> 식단 관리</a>
                 </li>
                 <li>
                     <a href="/home/friends"><i class="fa fa-user fa-fw"></i> 친구 관리</a>
@@ -98,93 +94,65 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default" style="width:100%;">
+            <div class="panel panel-default" style="width:100%;margin-top: 10px;">
                 <div class="panel-heading" style="height:45px">
                   <div><p style="font-size:18pt; color:#6E6E6E;line-height:25px"><strong>식단</strong></p></div>
-              </div>
-            <!-- start -->
-            <div class="panel panel-default" style="margin-left:17px; margin-top:20px; width:48%; float:left">
-                <!-- panel top-->
-                <div class="panel-body" style="padding-top:5px;padding-bottom:5px">
-                    <img class="img-circle pull-left" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="profile" style="height:60px;width:60px">
-                    <a href=""><div style="font-size:14pt;line-height:35px;color:black;margin-left:70px">Robert McIntosh</div></a>
-                    <span style="color:gray;margin-left:10px">Jun 27, 2014</span>
                 </div>
-                <!-- panel body-->
-                <div class="panel" style="margin-top:0px;margin-bottom:0px">
-                    <img src="http://dbscthumb.phinf.naver.net/2165_000_1/20120913145141621_W199ELLPF.jpg/fe37_1942_i1.jpg?type=m4500_4500_fst"
-                      alt="food" style="width:100%;height:350px">
-                </div>
-                <!-- menu -->
-                <div class="panel-heading">
-                    <span style="font-size:12pt;font-weight:bold">#비빔밥, #젓갈</span><span style="font-size:12pt;font-weight:bold;float:right"> 총 칼로리 : 2012119020kcal</span>
-                </div>    
-                <!--replies-->
-                <div class="panel-heading">
-                    <div class="panel-heding">
-                        <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:45px;width:45px;float:left">
-                        <a href=""><div style="font-size:11pt;line-height:20px;margin-left:50px"><strong>Robert McIntosh</strong></div></a>
-                        <span style="color:black;margin-left:5px; font-size:9pt"><strong>아 맛있겠다</strong></span><hr>
+                
+                <% Post.where(:user_email => @user.email).reverse.each do |p| %>
+                    <!-- start -->
+                    <div class="panel panel-default" style="margin-left:17px; margin-top:20px; width:70%;">
+                        <!-- panel top-->
+                        <div class="panel-body" style="padding-top:5px;padding-bottom:5px">
+                            <img class="img-circle pull-left" src="<%=@user.profile_img%>" alt="profile" 
+                            style="height:60px;width:60px">
+                            <div style="font-size:14pt;line-height:35px;color:black;margin-left:70px"><%=@user.username%>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=p.title%>
+                            </div>
+                            <span style="color:gray;margin-left:10px">
+                                <%=p.created_at.strftime("%Y-%m-%d")%> <%=p.created_at.strftime("%H:%M")%></span>
+                        </div>
+                        <!-- panel body-->
+                        <div class="panel" style="margin-top:0px;margin-bottom:0px">
+                            <img src="<%=p.image.url%>" alt="food" style="width:100%;height:350px">
+                        </div>
+                        <!-- menu -->
+                        <div class="panel-heading">
+                            <span style="font-size:12pt;font-weight:bold"><%=p.content%></span>
+                            <span style="font-size:12pt;font-weight:bold;float:right"> 총 칼로리 : <%=p.calorie%>kcal</span>
+                        </div>    
+                        <!--replies-->
+                        <div class="panel-heading">
+                            <div id = "reply_<%=p.id%>">
+                                <% Reply.where(:post_id => p.id).each do |r|%>
+                                    <div class="panel-heding">
+                                        <% @u = User.find_by(email:r.user_email) %>
+                                        <img src="<%=@u.profile_img%>" class="img" alt="head" 
+                                        style="height:45px;width:45px;float:left">
+                                        <a href="/home/board/<%=@u.id%>">
+                                            <div style="font-size:11pt;line-height:20px;margin-left:10px; float:left">
+                                                <strong><%=r.user_email%></strong></div></a>
+                                            <div style="font-size:11pt;line-height:20px;margin-right:50px; float: right">
+                                                <%=r.created_at.strftime("%Y-%m-%d")%> <%=r.created_at.strftime("%H:%M")%></div>  <hr>
+                                        <span style="color:black;margin-left:10px; font-size:9pt"><strong><%=r.content%></strong></span><hr>
+                                    </div>
+                                <% end%> 
+                            </div>
+                        <!--create reply -->    
+                                <div class="form-horizontal">
+                                 <img id = "current_user_profile" src="<%=current_user.profile_img%>" class="img" alt="head" 
+                                 style="height:47px;width:47px;float:left;">
+                                 <div class="col-sm-10">
+                                 <textarea class="form-control" rows="2"style="resize: none; wrap:hard;" id="content_<%= p.id %>"
+                                 placeholder="댓글..."></textarea>
+                                 </div>
+                                </div>
+                                <button type="submit" class="btn btn-default reply_submit" value = "<%=p.id%>"
+                                style="margin-top:10px">쓰기</button><hr>
+                                <input type = "hidden" id = "current_user_email" value = "<%=current_user.email%>"/>
+                        </div>
                     </div>
-                    <div class="panel-heding">
-                        <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:45px;width:45px;float:left">
-                        <a href=""><div style="font-size:11pt;line-height:20px;margin-left:50px"><strong>Robert McIntosh</strong></div></a>
-                        <span style="color:black;margin-left:5px; font-size:9pt"><strong>아 맛있겠다</strong></span><hr>
-                    </div>
-                <!--create reply -->    
-                    <form style="padding:3px;margin:0px">
-                      <div class="form-horizontal">
-                         <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:47px;width:47px;float:left;">
-                         <div class="col-sm-10">
-                         <textarea class="form-control" rows="2"style="resize: none; wrap:hard;" placeholder="댓글..."></textarea>
-                         </div>
-                      </div>
-                         <button type="submit" class="btn btn-default" style="margin-top:10px">제출</button><hr>
-                    </form>
-                </div>
-            </div>
-            <!-- end -->
-            <!-- start -->
-            <div class="panel panel-default" style="margin-left:17px; margin-top:20px; width:48%;float:left">
-                <!-- panel top-->
-                <div class="panel-body" style="padding-top:5px;padding-bottom:5px">
-                    <img class="img-circle pull-left" src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" alt="profile" style="height:60px;width:60px">
-                    <a href=""><div style="font-size:14pt;line-height:35px;color:black;margin-left:70px">Robert McIntosh</div></a>
-                    <span style="color:gray;margin-left:10px">Jun 27, 2014</span>
-                </div>
-                <!-- panel body-->
-                <div class="panel" style="margin-top:0px;margin-bottom:0px">
-                    <img src="http://dbscthumb.phinf.naver.net/2165_000_1/20120913145141621_W199ELLPF.jpg/fe37_1942_i1.jpg?type=m4500_4500_fst"
-                      alt="food" style="width:100%;height:350px">
-                </div>
-                <!-- menu -->
-                <div class="panel-heading">
-                    <span style="font-size:12pt;font-weight:bold">#비빔밥, #젓갈</span><span style="font-size:12pt;font-weight:bold;float:right"> 총 칼로리 : 2012119020kcal</span>
-                </div>
-                <!--replies-->
-                <div class="panel-heading">
-                    <div class="panel-heding">
-                        <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:45px;width:45px;float:left">
-                        <a href=""><div style="font-size:11pt;line-height:20px;margin-left:50px"><strong>Robert McIntosh</strong></div></a>
-                        <span style="color:black;margin-left:5px; font-size:9pt"><strong>아 맛있겠다</strong></span><hr>
-                    </div>
-                    <div class="panel-heding">
-                        <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:45px;width:45px;float:left">
-                        <a href=""><div style="font-size:11pt;line-height:20px;margin-left:50px"><strong>Robert McIntosh</strong></div></a>
-                        <span style="color:black;margin-left:5px; font-size:9pt"><strong>아 맛있겠다</strong></span><hr>
-                    </div>
-                <!--create reply -->    
-                    <form style="padding:3px;margin:0px">
-                      <div class="form-horizontal">
-                         <img src="https://lh3.googleusercontent.com/-CxXg7_7ylq4/AAAAAAAAAAI/AAAAAAAAAQ8/LhCIKQC5Aq4/s46-c-k-no/photo.jpg" class="img" alt="head" style="height:47px;width:47px;float:left;">
-                         <div class="col-sm-10">
-                         <textarea class="form-control" rows="2"style="resize: none; wrap:hard;" placeholder="댓글..."></textarea>
-                         </div>
-                      </div>
-                         <button type="submit" class="btn btn-default" style="margin-top:10px">제출</button><hr>
-                    </form>
-                </div>
-            </div>
+                <%end%>
             <!-- end -->
             </div>
         </div>
@@ -194,3 +162,29 @@
 
 </div>
 <!-- /#wrapper -->
+
+<script>
+  $(function(){
+    $(".reply_submit").click(function(){
+      post_id = this.value;
+      reply_content = $("#content_" + post_id).val();
+      profile_img = $("#current_user_profile").attr('src');
+      user_email = $("#current_user_email").val();
+      
+      $.ajax({
+        
+        method: "POST",
+        url: "/write_reply",
+        data: { content: reply_content, id: post_id, user_email: user_email, status: 1},
+        
+        success: function(){
+          $("#reply_" + post_id).append("<div class=\"panel-heding\"><img src=\""+ profile_img + "\" class=\"img\" alt=\"head\"style=\"height:45px;width:45px;float:left\"><a href=\"/home/board/<%=@u.id%>\"><div style=\"font-size:11pt;line-height:20px;margin-left:10px; float:left\"><strong>" + user_email + "</strong></div></a><div style=\"font-size:11pt;line-height:20px;margin-right:50px; float: right\">방금 전</div><hr><span style=\"color:black;margin-left:10px; font-size:9pt\"><strong>" + reply_content + "</strong></span><hr></div>");
+          $("#content_" + post_id).val('');
+        },
+        error: function(){
+          alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+        }
+      })
+    });
+  });
+</script>
