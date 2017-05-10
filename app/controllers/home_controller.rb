@@ -84,11 +84,11 @@ class HomeController < ApplicationController
          if @relation==nil
            @first=UserFriend.where(user_email:@user.email)
              if @first==nil
-               @relation=UserFriend.new(user_email:@user.email,friend_email:@touser,status:2)
+               @relation=UserFriend.new(user_email:@user.email,friend_email:@touser.email,status:2)
              else
                @relation=@first.find_by(friend_email:@touser.email) 
                if @relation==nil
-                  @relation=UserFriend.new(user_email:@user.email,friend_email:@touser,status:2)
+                  @relation=UserFriend.new(user_email:@user.email,friend_email:@touser.email,status:2)
                end
              end
          end
@@ -96,11 +96,11 @@ class HomeController < ApplicationController
        else
          @first=UserFriend.where(user_email:@user.email)
           if @first==nil
-             @relation=UserFriend.new(user_email:@user.email,friend_email:@touser,status:2) 
+             @relation=UserFriend.new(user_email:@user.email,friend_email:@touser.email,status:2) 
           else 
              @relation=@first.find_by(friend_email:@touser.email)
              if @relation==nil
-                @relation=UserFriend.new(user_email:@user.email,friend_email:@touser,status:2)
+                @relation=UserFriend.new(user_email:@user.email,friend_email:@touser.email,status:2)
              end
           end
           @relation.save
@@ -158,6 +158,42 @@ class HomeController < ApplicationController
                       end  
                     end  
                 end
+                @touser_friend_2.each do |to2|
+                    if to2.user_email!=@user.email
+                      if @sejong!=nil && @daewang!=nil 
+                         @temp=@sejong.find_by(friend_email:to2.user_email)
+                         if @temp==nil
+                              @add=@daewang.find_by(user_email:to2.user_email)
+                              if @add==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                              end
+                         end
+                         @temp2=@daewang.find_by(user_email:to2.user_email)
+                           if @temp2==nil
+                             @add2=@sejong.find_by(friend_email:to2.user_email)
+                             if @add2==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                             end
+                           end 
+                      else  
+                          if @sejong==nil
+                            @temp=@daewang.find_by(user_email:to2.user_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email,status:2)
+                                @edo.save
+                            end
+                          else
+                            @temp=@sejong.find_by(friend_email:to2.user_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
+                                @edo.save
+                            end
+                          end
+                      end  
+                    end  
+                end
             else
                 @touser_friend_2.each do |to2|
                     if to2.user_email!=@user.email
@@ -189,6 +225,42 @@ class HomeController < ApplicationController
                             @temp=@sejong.find_by(friend_email:to2.user_email)
                             if @temp==nil
                                 @edo=UserFriend.new(user_email:@user.email, friend_email:to2.user_email, status:2)
+                                @edo.save
+                            end
+                          end
+                      end  
+                    end  
+                end
+                @touser_friend_1.each do |to1|
+                    if to1.friend_email!=@user.email
+                      if @sejong!=nil && @daewang!=nil 
+                         @temp=@sejong.find_by(friend_email:to1.friend_email)
+                         if @temp==nil
+                              @add=@daewang.find_by(user_email:to1.friend_email)
+                              if @add==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                              end
+                         end
+                         @temp2=@daewang.find_by(user_email:to1.friend_email)
+                           if @temp2==nil
+                             @add2=@sejong.find_by(friend_email:to1.friend_email)
+                             if @add2==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                             end
+                           end 
+                      else  
+                          if @sejong==nil
+                            @temp=@daewang.find_by(user_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email,status:2)
+                                @edo.save
+                            end
+                          else
+                            @temp=@sejong.find_by(friend_email:to1.friend_email)
+                            if @temp==nil
+                                @edo=UserFriend.new(user_email:@user.email, friend_email:to1.friend_email, status:2)
                                 @edo.save
                             end
                           end
@@ -293,7 +365,7 @@ class HomeController < ApplicationController
       @touser=User.find(params[:touser_id])
       @temp=UserFriend.where(user_email:@user.email)
       @relation=@temp.find_by(friend_email:@touser.email)
-      @relation.status=1
+      @relation.status=0
       @relation.save
       
       redirect_to :back
