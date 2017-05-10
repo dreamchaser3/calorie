@@ -273,19 +273,25 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
-                        <% UserFriend.where(:user_email => current_user.email, :status => 1).each do |f| %>
+                        <% UserFriend.where("user_email = ? or friend_email = ? and status = 1", current_user.email, current_user.email).each do |f| %>
+                        
                             <% @friend_user = User.find_by(email:f.friend_email) %>
-                            <div class="col-sm-4 col-md-3"> 
-                                <div class="thumbnail"> 
-                                    <img alt="100%x200" data-src="holder.js/100%x200" 
-                                    src="<%=@friend_user.profile_img%>"
-                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
-                                    <div class="caption" align = "center"> 
-                                        <h4><strong><a href = "/home/board/<%=@friend_user.id%>"><%=@friend_user.username%></a>
-                                        </strong></h4> 
+                            <% if !@friend_user.nil?%>
+                                <% if @friend_user.id == current_user.id%>
+                                    <% @friend_user = User.find_by(email:f.user_email)%>
+                                <% end%>    
+                                <div class="col-sm-4 col-md-3"> 
+                                    <div class="thumbnail"> 
+                                        <img alt="100%x200" data-src="holder.js/100%x200" 
+                                        src="<%=@friend_user.profile_img%>"
+                                        data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                        <div class="caption" align = "center"> 
+                                            <h4><strong><a href = "/home/board/<%=@friend_user.id%>"><%=@friend_user.username%></a>
+                                            </strong></h4> 
+                                        </div> 
                                     </div> 
-                                </div> 
-                            </div>
+                                </div>
+                            <% end %>
                         <%end%>
                     </div>
                     <!-- /.row -->

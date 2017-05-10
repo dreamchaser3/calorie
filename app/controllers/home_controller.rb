@@ -6,6 +6,7 @@ class HomeController < ApplicationController
     @breakfast= nil
     @lunch = nil
     @dinner = nil
+    
     if !@posts[Date.today].nil?
       @posts[Date.today].each do |p|
         if p.category == 0
