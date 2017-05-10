@@ -164,13 +164,13 @@
                        <div class="panel-body">
                            <div class="media">
                                <div class="media-left media-top">
-                                    <a href=""><img src="<%=@alluser.find_by(email:f.friend_email).profile_img%>" alt='Thumbnail' style="width:120px;height:120px">
+                                    <a href="/home/board/<%=@alluser.find_by(email:f.friend_email).id%>"><img src="<%=@alluser.find_by(email:f.friend_email).profile_img%>" alt='Thumbnail' style="width:120px;height:120px">
                                     </a>
                                </div>    
                                     <div class="media-body">
                                         <div style="margin-top:10px">
                                             <h4 class="media-heading">
-                                                <a href="" style="color:black;"><strong><%=@alluser.find_by(email:f.friend_email).username%></strong></a>
+                                                <a href="/home/board/<%=@alluser.find_by(email:f.friend_email).id%>" style="color:black;"><strong><%=@alluser.find_by(email:f.friend_email).username%></strong></a>
                                                 <div class="pull-right">
                                                     <button type="button" class="btn btn-primary" style="width:90pt;height:20pt;">
                                                         <div style="color:white;"><strong><p style="line-height:10px"><i class="fa fa-spinner" aria-hidden="true"></i>   친구 요청 중</p></strong>
@@ -201,12 +201,12 @@
                               <div class="panel-body">
                                     <div class="media">
                                             <div class="media-left media-top">
-                                            <a href=""><img src="<%=@alluser.find_by(email:f.user_email).profile_img%>" alt='Thumbnail' style="width:120px;height:120px">
+                                            <a href="/home/board/<%=@alluser.find_by(email:f.user_email).id%>"><img src="<%=@alluser.find_by(email:f.user_email).profile_img%>" alt='Thumbnail' style="width:120px;height:120px">
                                             </a>
                                             </div>
                                             <div class="media-body">
                                                 <div style="margin-top:10px">
-                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong><%=@alluser.find_by(email:f.user_email).username%></strong></a> 
+                                                    <h4 class="media-heading"><a href="/home/board/<%=@alluser.find_by(email:f.user_email).id%>" style="color:black;"><strong><%=@alluser.find_by(email:f.user_email).username%></strong></a> 
                                                         <div class="pull-right">
                                                             <form action='/make_friend/<%=f.id%>' method='post'>
                                                             <button type="submit" class="btn btn-primary" style="width:50pt;height:20pt;">
@@ -241,12 +241,12 @@
                               <div class="panel-body">
                                 <div class="media">
                                             <div class="media-left media-top">
-                                            <a href=""><img src="<%=@alluser.find_by(email:f.friend_email).profile_img%>" style="width:120px;height:120px"alt='Thumbnail'>
+                                            <a href="/home/board/<%=@alluser.find_by(email:f.friend_email).id%>"><img src="<%=@alluser.find_by(email:f.friend_email).profile_img%>" style="width:120px;height:120px"alt='Thumbnail'>
                                             </a>
                                             </div>
                                             <div class="media-body">
                                                 <div style="margin-top:10px">
-                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong><%=@alluser.find_by(email:f.friend_email).username%></strong></a> 
+                                                    <h4 class="media-heading"><a href="/home/board/<%=@alluser.find_by(email:f.friend_email).id%>" style="color:black;"><strong><%=@alluser.find_by(email:f.friend_email).username%></strong></a> 
                                                         <div class="pull-right">
                                                             <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
                                                             <div style="color:gray"><strong><p style="line-height:10px"><i class="fa fa-check" aria-hidden="true"></i>    친구</p></strong></div>
@@ -270,12 +270,12 @@
                               <div class="panel-body">
                                 <div class="media">
                                             <div class="media-left media-top">
-                                            <a href=""><img src="<%=@alluser.find_by(email:f.user_email).profile_img%>" style="width:120px;height:120px"alt='Thumbnail'>
+                                            <a href="/home/board/<%=@alluser.find_by(email:f.user_email).id%>"><img src="<%=@alluser.find_by(email:f.user_email).profile_img%>" style="width:120px;height:120px"alt='Thumbnail'>
                                             </a>
                                             </div>
                                             <div class="media-body">
                                                 <div style="margin-top:10px">
-                                                    <h4 class="media-heading"><a href="" style="color:black;"><strong><%=@alluser.find_by(email:f.user_email).username%></strong></a> 
+                                                    <h4 class="media-heading"><a href="/home/board/<%=@alluser.find_by(email:f.user_email).id%>" style="color:black;"><strong><%=@alluser.find_by(email:f.user_email).username%></strong></a> 
                                                         <div class="pull-right">
                                                             <button onclick="" type="button" class="btn btn-default" style="width:55pt;height:20pt;">
                                                             <div style="color:gray"><strong><p style="line-height:10px"><i class="fa fa-check" aria-hidden="true"></i>    친구</p></strong></div>
