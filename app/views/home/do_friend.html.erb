@@ -142,7 +142,7 @@
             </div>
             <div class='panel' style="margin-bottom:0px">
             <li class="list-group-item">
-                              <a href=""><div style="position: absolute;top:180px;left:270px;color:white;font-size:23pt;z-index:3;"><strong><%=@touser.username%></strong>
+                              <a href="/home/board/<%=@touser.id%>"><div style="position: absolute;top:180px;left:270px;color:white;font-size:23pt;z-index:3;"><strong><%=@touser.username%></strong>
                               </div></a>
                               <div style="position: absolute;top:225px;left:270px;color:gray;font-size:14pt;z-index:3;"><strong><%=@touser.email%></strong>
                               </div>
@@ -150,7 +150,7 @@
                                      <img src="<%=@touser.background_img%>" style="width:100%;height:250px" alt:"background image">
                               </div>
                               <div style="position: absolute; top: 50px; left:40px;z-index: 2;border-style:solid; border-color:white">
-                                <a href=""><img src="<%=@touser.profile_img%>" style="width:200px;height:200px" alt="profile image"></a>
+                                <a href="/home/board/<%=@touser.id%>"><img src="<%=@touser.profile_img%>" style="width:200px;height:200px" alt="profile image"></a>
                               </div>
                       </li>
             </div>
@@ -172,7 +172,7 @@
                                     src="<%=@alluser.find_by(email:f.friend_email).profile_img%>" 
                                     data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                     <div class="caption" align = "center"> 
-                                        <h4><strong><a href = ""><%=@alluser.find_by(email:f.friend_email).username%></a></strong></h4> 
+                                        <h4><strong><a href = "/home/board/<%=@alluser.find_by(email:f.friend_email).id%>"><%=@alluser.find_by(email:f.friend_email).username%></a></strong></h4> 
                                         <p style="color:gray"><%=@alluser.find_by(email:f.friend_email).email%></p>
                                         <button class="btn btn-info" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i>   친구 추가</button>
                                     </div> 
@@ -189,7 +189,7 @@
                                     src="<%=@alluser.find_by(email:f.user_email).profile_img%>" 
                                     data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                     <div class="caption" align = "center"> 
-                                        <h4><strong><a href = ""><%=@alluser.find_by(email:f.user_email).username%></a></strong></h4> 
+                                        <h4><strong><a href = "/home/board/<%=@alluser.find_by(email:f.user_email).id%>"><%=@alluser.find_by(email:f.user_email).username%></a></strong></h4> 
                                         <p style="color:gray"><%=@alluser.find_by(email:f.user_email).email%></p>
                                         <button class="btn btn-info" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i>   친구 추가</button>
                                     </div> 
