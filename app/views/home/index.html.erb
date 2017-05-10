@@ -107,7 +107,7 @@
                             <i class="fa fa-comments fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><%= UserFriend.where(:user_email => current_user.email, :status => 0).count%></div>
+                            <div class="huge"><%= UserFriend.where(:friend_email => current_user.email, :status => 0).count%></div>
                             <div>새 친구 요청!</div>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                 <!-- /.panel-heading -->
                 <div class="panel-body">
                     <div class="row">
-                        <% UserFriend.where("user_email = ? or friend_email = ? and status = 1", current_user.email, current_user.email).each do |f| %>
+                        <% UserFriend.where("(user_email = ? or friend_email = ?) and status = 1", current_user.email, current_user.email).each do |f| %>
                         
                             <% @friend_user = User.find_by(email:f.friend_email) %>
                             <% if !@friend_user.nil?%>
