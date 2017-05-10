@@ -163,7 +163,8 @@
                 <div class="panel-body">
                     <div class="row">
                         <%@allfriend.each do |f|%>
-                            <%if f.friend_email !=@touser.email &&f.status==2%>
+                            <%if f.user_email==@user.email &&f.friend_email !=@touser.email &&f.status==2%>
+                            <%if @alluser.include?(@alluser.find_by(email:f.friend_email))%>
                             <form action='/bemyfr2/<%=@user.id%>/<%=@alluser.find_by(email:f.friend_email).id%>' method='post'>
                             <div class="col-sm-4 col-md-3">
                                 <div class="thumbnail"> 
@@ -178,7 +179,24 @@
                                 </div>
                             </div> 
                             </form>
-                            <%end%>
+                            <%end%><%end%>
+                             <%if f.user_email!=@touser.email &&f.friend_email ==@user.email &&f.status==2%>
+                             <%if @alluser.include?(@alluser.find_by(email:f.user_email))%>
+                            <form action='/bemyfr3/<%=@user.id%>/<%=@alluser.find_by(email:f.user_email).id%>' method='post'>
+                            <div class="col-sm-4 col-md-3">
+                                <div class="thumbnail"> 
+                                    <img alt="100%x200"
+                                    src="<%=@alluser.find_by(email:f.user_email).profile_img%>" 
+                                    data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
+                                    <div class="caption" align = "center"> 
+                                        <h4><strong><a href = ""><%=@alluser.find_by(email:f.user_email).username%></a></strong></h4> 
+                                        <p style="color:gray"><%=@alluser.find_by(email:f.user_email).email%></p>
+                                        <button class="btn btn-info" type="submit"><i class="fa fa-user-plus" aria-hidden="true"></i>   친구 추가</button>
+                                    </div> 
+                                </div>
+                            </div> 
+                            </form>
+                            <%end%><%end%>
                         <%end%>
                     </div>
                     <!-- /.row -->
