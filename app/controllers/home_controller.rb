@@ -2,6 +2,16 @@ class HomeController < ApplicationController
 
   before_action :authenticate_user!
   
+  def profile
+    @user=current_user
+    @user.username=params[:c_name]
+    @user.password=params[:c_password]
+    @user.profile_img=params[:c_profile]
+    @user.background_img=params[:c_background]
+    @user.save
+    redirect_to :back
+  end
+  
   def index
     @posts = Post.where(:user_email => current_user.email).group_by {|c| c.created_at.to_date}
     @breakfast= nil
