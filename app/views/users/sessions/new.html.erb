@@ -1,26 +1,133 @@
-<h2>Log in</h2>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+		<!-- Website Font style -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+		
+		<!-- Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <body>
+		<div class="container">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Calorie</h1>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+				  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+					
+						<div class="form-group">
+							<label for="username" class="cols-sm-2 control-label">Email</label>
+							<div class="cols-sm-10">
+								<div class="field">
+									<%= f.email_field :email, autofocus: true %>
+								</div>
+							</div>
+						</div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="field">
+								  <%= f.password_field :password, autocomplete: "off" %>
+								</div>
+							</div>
+						</div>
+            <% if devise_mapping.rememberable? -%>
+            <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            </div>
+            <% end -%>
+						<div class="actions">
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button" >Log in</button>
+						</div>
+					<%end%>
+					<%= render "devise/shared/links" %>
+				</div>
+			</div>
+		</div>
+		</body>
+		
+		<style>
+		  /*
+/* Created by Filipe Pina
+ * Specific styles of signin, register, component
+ */
+/*
+ * General styles
+ */
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+body, html{
+     height: 100%;
+ 	background-repeat: no-repeat;
+ 	background-color: #FFFFFF;
+ 	font-family: 'Oxygen', sans-serif;
+}
 
-<%= render "devise/shared/links" %>
+.main{
+ 	margin-top: 70px;
+}
+
+h1.title { 
+	font-size: 50px;
+	font-family: 'Passion One', cursive; 
+	font-weight: 400; 
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.main-login{
+ 	background-color: #fff;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+ 	max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+	margin-top: 5px;
+}
+
+.login-register{
+	font-size: 11px;
+	text-align: center;
+}
+
+		</style>
+		
+		
