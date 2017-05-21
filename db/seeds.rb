@@ -27,3 +27,7 @@ UserFriend.create(user_email:'kimhyunwoo@naver.com',friend_email:"test@naver.com
 UserFriend.create(user_email:'kimhyunwoo@naver.com',friend_email:"test2@naver.com",status:1)
 UserFriend.create(user_email:'test@naver.com',friend_email:"ohhyunju@naver.com",status:1)
 UserFriend.create(user_email:'test2@naver.com',friend_email:"ohhyunju@naver.com",status:1)
+
+# In index.html.erb, "<%= Post.last.id + 1%>" requires that Posts always have more than one post.
+# So, make a fake record in Post.
+Post.create(category: -1, user_email: "-1")
