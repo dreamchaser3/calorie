@@ -7,7 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       # category: 0->아침, 1->점심, 2->저녁
       t.integer :category, null: false
       t.string :user_email, null: false
-      t.decimal :calorie,       precision: 10, scale: 2
+      t.integer :calorie
       t.timestamps null: false
     end
   end

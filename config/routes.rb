@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/do_friend' => 'home#do_friend'
   post '/change_profile_img' => 'home#change_profile_img'
   post '/change_background_img' => 'home#change_background_img'
-  post '/write_post/:category' => 'home#write_post'
+  post '/write_post' => 'home#write_post'
   post '/make_friend/:friend_id'=>'home#make_friend'
   post '/write_reply' => 'home#write_reply'
   post '/make_friend2/:touser_id/:user_id' =>'home#make_friend2'

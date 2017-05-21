@@ -50,7 +50,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
     <!-- Custom Theme JavaScript -->
     <!--<script src="../assets/javascripts/sb-admin-2.js"></script>-->
-    
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 </head>
 <body>
   <% flash.each do |key, value| %>
@@ -59,6 +62,7 @@
   <% end %>
    
 <%= yield %>
+
 
 </body>
 </html>

@@ -309,8 +309,7 @@
 
 </div>
 <!-- /#wrapper -->
-
-<!-- Modal0 -->
+ <!--Modal0 -->
 <div class="modal fade" id="myModal0" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -320,29 +319,26 @@
         <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
       </div>
       <div class="modal-body">
-        <form action ="/write_post/0" method="POST" enctype="multipart/form-data">
-            <div>
-                <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
-        		<textarea style="margin-left: 20px;" name="content" rows="5" cols="60" 
-        		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
-    		</div>
-    		<div style="margin-top: 25px;">
-                <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
-    			<input type="file" name="pic" accept="image/*">
-			</div>
-		
-       
+        <div>
+            <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
+    		<textarea id = "post_content_0"style="margin-left: 20px;" name="content" rows="5" cols="60" 
+    		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
+		</div>
+		<div style="margin-top: 25px;">
+            <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+			<input id = "imageinput0" type="file" name="pic" accept="image/*">
+		</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-        <button type="submit" class="btn btn-primary">등록!</button>
-        </form>
+        <button type="submit" class="btn btn-primary imagebttn" value = "0">등록!</button>
+       
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal1 -->
+ <!--Modal1 -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -352,29 +348,26 @@
         <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
       </div>
       <div class="modal-body">
-        <form action ="/write_post/1" method="POST" enctype="multipart/form-data">
-            <div>
-                <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
-        		<textarea style="margin-left: 20px;" name="content" rows="5" cols="60" 
-        		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
-    		</div>
-    		<div style="margin-top: 25px;">
-                <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
-    			<input type="file" name="pic" accept="image/*">
-			</div>
-		
-       
+        <div>
+            <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
+    		<textarea id = "post_content_1"style="margin-left: 20px;" name="content" rows="5" cols="60" 
+    		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
+		</div>
+		<div style="margin-top: 25px;">
+            <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+			<input id = "imageinput1" type="file" name="pic" accept="image/*">
+		</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-        <button type="submit" class="btn btn-primary">등록!</button>
-        </form>
+        <button type="submit" class="btn btn-primary imagebttn" value = "1">등록!</button>
+        
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal2 -->
+ <!--Modal2 -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -384,28 +377,56 @@
         <h4 class="modal-title" id="myModalLabel">식사 등록</h4>
       </div>
       <div class="modal-body">
-        <form action ="/write_post/2" method="POST" enctype="multipart/form-data">
-            <div>
-                <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
-        		<textarea style="margin-left: 20px;" name="content" rows="5" cols="60" 
-        		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
-    		</div>
-    		<div style="margin-top: 25px;">
-                <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
-    			<input type="file" name="pic" accept="image/*">
-			</div>
-		
-       
+        <div>
+            <p style = "float:left"><strong style="margin-left: 0px;padding-left: 50px;">내용</strong></p>
+    		<textarea id = "post_content_2"style="margin-left: 20px;" name="content" rows="5" cols="60" 
+    		placeholder = "식사에 대한 내용을 자유롭게 작성해주세요."></textarea>
+		</div>
+		<div style="margin-top: 25px;">
+            <p style = "float:left"><strong style="padding-left: 50px;">음식 사진 업로드&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>
+			<input id = "imageinput2" type="file" name="pic" accept="image/*">
+		</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-        <button type="submit" class="btn btn-primary">등록!</button>
-        </form>
+        <button type="submit" class="btn btn-primary imagebttn" value = "2">등록!</button>
+        
       </div>
     </div>
   </div>
 </div>
 <div id = "test"></div>
+<div id = "test2"></div>
+<!--write post-->
+<script>
+    $(function(){
+        $(".imagebttn").click(function(){
+            category = this.value;
+            post_content = $("#post_content_" + category).val();
+            
+            var formData = new FormData();
+            image = $("#imageinput" + category)[0].files[0];
+            formData.append("category", category);
+            formData.append("content", post_content);
+            formData.append("pic", image);
+            
+            $.ajax({
+                method: "POST",
+                url: "/write_post",
+                data: formData,
+                processData: false,
+                contentType: false,
+                async: false
+            })
+            .done(function() { 
+                image_url = "http://calorie4-dreamchaser3.c9users.io/uploads/post/image/" + "<%=Post.last.id + 1 %>/" + image.name;
+                connect(image_url);
+                //document.getElementById("test").innerHTML = image_url;
+            }) 
+        });
+    });
+</script>
+<!--calorie chart-->
 <script>
     var array = <%= raw @results.to_json %>;
     
@@ -424,37 +445,4 @@
   // chart.
   labels: ['총 칼로리 양(아침)', '총 칼로리 양(점심)','총 칼로리 양(저녁)']
 });
-</script>
-
-<script>
-    var socket, host;
-    host = "ws://165.132.173.22:8888/ws";
-
-    function connect() {
-      try {
-        socket = new WebSocket(host);
-        document.getElementById("test").innerHTML = socket.readyState;
-        socket.onopen = function() {
-          document.getElementById("test").innerHTML = "2"
-          socket.send("abcdfdfdfddf");
-        }
-    
-        socket.onclose = function() {
-          document.getElementById("test").innerHTML = "3";
-        }
-        socket.onerror = function(){
-            document.getElementById("test").innerHTML = "error";
-        }
-        socket.onmessage = function(msg) {
-          document.getElementById("test").innerHTML = msg.data;
-        }
-      } catch(exception) {
-        document.getElementById("test").innerHTML = exception.message;
-        //document.getElementById("test").innerHTML = "왜안돼"
-      }
-    }
-
-    $(function() {
-      connect();
-    });
 </script>

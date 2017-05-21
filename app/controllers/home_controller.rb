@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   before_action :authenticate_user!
-  
+ 
   def profile
     @user=current_user
     @user.username=params[:c_name]
@@ -43,8 +43,8 @@ class HomeController < ApplicationController
       a['dinner'] = @data[k][2]
       @results.push(a)
     end
-    if !@posts[Date.today].nil?
-      @posts[Date.today].each do |p|
+    if !@posts[Time.zone.now.to_date].nil?
+      @posts[Time.zone.now.to_date].each do |p|
         if p.category == 0
           @breakfast = p
         elsif p.category == 1
@@ -87,12 +87,10 @@ class HomeController < ApplicationController
     @user.save
     redirect_to '/home/friends'
   end
-
-  # modal category, title, 
+  
   def write_post
     category_array = ["아침", "점심", "저녁"]
     category_param = params[:category].to_i
-    
     @post = Post.new(title: category_array[category_param], content: params[:content], 
                       user_email: current_user.email, category: category_param, calorie: 1000)
     
