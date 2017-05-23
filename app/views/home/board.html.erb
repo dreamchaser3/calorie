@@ -118,8 +118,8 @@
                         </div>
                         <!-- menu -->
                         <div class="panel-heading">
-                            <span style="font-size:12pt;font-weight:bold"><%=p.content%></span><br>
-                            <span>칼로리 정보</span><hr>
+                            <span style="font-size:12pt;font-weight:bold"><%=p.content%></span><hr>
+                            <span>칼로리 정보</span><br><br>
                             <%p.foods.each do |f|%>
                                 <span><%=f.name%> - <%=f.calorie%></span>
                             <%end%>
