@@ -114,11 +114,15 @@
                         </div>
                         <!-- panel body-->
                         <div class="panel" style="margin-top:0px;margin-bottom:0px">
-                            <img src="<%=p.image.url%>" alt="food" style="width:100%;height:350px">
+                            <img src="<%=p.output_url%>" alt="food" style="width:100%;height:350px">
                         </div>
                         <!-- menu -->
                         <div class="panel-heading">
-                            <span style="font-size:12pt;font-weight:bold"><%=p.content%></span>
+                            <span style="font-size:12pt;font-weight:bold"><%=p.content%></span><br>
+                            <span>칼로리 정보</span><hr>
+                            <%p.foods.each do |f|%>
+                                <span><%=f.name%> - <%=f.calorie%></span>
+                            <%end%>
                             <span style="font-size:12pt;font-weight:bold;float:right"> 총 칼로리 : <%=p.calorie%>kcal</span>
                         </div>    
                         <!--replies-->
