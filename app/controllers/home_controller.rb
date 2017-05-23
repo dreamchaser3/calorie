@@ -18,11 +18,13 @@ class HomeController < ApplicationController
     
     classes = params[:classes]
     
-    classes.each do |c|
-      food = Food.find(c)
-      @p.foods.push(food)
-      @p.calorie += food.calorie
-    end 
+    if(!classes.nil?)
+      classes.each do |c|
+        food = Food.find(c)
+        @p.foods.push(food)
+        @p.calorie += food.calorie
+      end 
+    end
     @p.save
     redirect_to '/'
   end
