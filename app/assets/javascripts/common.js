@@ -20,8 +20,20 @@ var connect = function(image_url) {
         document.getElementById("test").innerHTML = "error";
     };
     socket.onmessage = function(msg) {
-      document.getElementById("test").innerHTML = msg.data;
-      //window.location = "/";
+      document.getElementById("test").innerHTML = "success";
+      
+      var result = JSON.parse(msg.data);
+      var url = "data:image/png;base64," + result["image"];
+      
+      $.ajax({
+          method: "POST",
+          url: "/reset_image_url",
+          data: {output_url: url, classes: result["classes"]}
+      })
+      .done(function() { 
+          window.location = "/";
+      });
+      
     };
   } catch(exception) {
     document.getElementById("test").innerHTML = exception.message;

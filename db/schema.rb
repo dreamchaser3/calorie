@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20170521040235) do
   create_table "foods", force: :cascade do |t|
     t.string   "name",       null: false
     t.integer  "calorie",    null: false
+    t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170521040235) do
     t.integer  "category",   null: false
     t.string   "user_email", null: false
     t.integer  "calorie"
+    t.string   "output_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"

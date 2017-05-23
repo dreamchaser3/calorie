@@ -12,6 +12,20 @@ class HomeController < ApplicationController
     redirect_to :back
   end
   
+  def reset_image_url
+    @p = Post.last
+    @p.output_url = params[:output_url]
+    
+    classes = params[:classes]
+    
+    classes.each do |c|
+      food = Food.find(c)
+      @p.foods.push(food)
+      @p.calorie += food.calorie
+    end 
+    @p.save
+    redirect_to '/'
+  end
   def index
     @posts = Post.where(:user_email => current_user.email).group_by {|c| c.created_at.to_date}
     @breakfast= nil
@@ -23,9 +37,8 @@ class HomeController < ApplicationController
     
     @data = Hash.new
     
-    calories = []
-    
     @posts.keys.each do |k|
+      calories = []
       @posts[k].each do |p|
         date = p.created_at.strftime("%Y-%m-%d")
         calories[p.category] = p.calorie
@@ -92,7 +105,7 @@ class HomeController < ApplicationController
     category_array = ["아침", "점심", "저녁"]
     category_param = params[:category].to_i
     @post = Post.new(title: category_array[category_param], content: params[:content], 
-                      user_email: current_user.email, category: category_param, calorie: 1000)
+                      user_email: current_user.email, category: category_param, calorie: 0)
     
     @post.image = params[:pic]
     @post.save!

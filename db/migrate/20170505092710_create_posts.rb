@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :category, null: false
       t.string :user_email, null: false
       t.integer :calorie
+      t.string :output_url, null: true
       t.timestamps null: false
     end
   end

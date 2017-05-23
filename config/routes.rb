@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post '/bemyfr2/:user_id/:touser_id'=>'home#bemyfr2'
   post '/bemyfr3/:user_id/:touser_id'=>'home#bemyfr3'
   post '/change_profile'=>'home#profile'
-  
+  post '/reset_image_url' => 'home#reset_image_url'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

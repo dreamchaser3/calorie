@@ -184,13 +184,17 @@
                                     <% else %>
                                         
                                             <img alt="100%x200" data-src="holder.js/100%x200" 
-                                        src="<%= @breakfast.image.url%>"
+                                        src="<%= @breakfast.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
                                             <h3>아침 </h3>
                                             
-                                            <p><%= @breakfast.content%></p> 
-                                            <h4 style = "color: red">칼로리: <%=@breakfast.calorie%></h4>
+                                            <p><%= @breakfast.content%></p><br>
+                                            <p>칼로리 정보</p><hr>
+                                            <%@breakfast.foods.each do |f|%>
+                                                <p><%=f.name%> - <%=f.calorie%></p>
+                                            <%end%>
+                                            <h4 style = "color: red">총 칼로리: <%=@breakfast.calorie%></h4>
                                     <%end%>
                                     </div> 
                                 </div> 
@@ -208,13 +212,17 @@
                                     <% else %>
                                         
                                             <img alt="100%x200" data-src="holder.js/100%x200" 
-                                        src="<%= @lunch.image.url%>"
+                                        src="<%= @lunch.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
                                             <h3>점심 </h3>
                                             
-                                            <p><%= @lunch.content%></p> 
-                                            <h4 style = "color: red">칼로리: <%=@lunch.calorie%></h4>
+                                            <p><%= @lunch.content%></p>
+                                            <p>칼로리 정보</p><hr>
+                                            <%@lunch.foods.each do |f|%>
+                                                <p><%=f.name%> - <%=f.calorie%></p>
+                                            <%end%>
+                                            <h4 style = "color: red">총 칼로리: <%=@lunch.calorie%></h4>
                                     <%end%>
                                     </div> 
                                 </div> 
@@ -232,12 +240,16 @@
                                     <% else %>
                                         
                                             <img alt="100%x200" data-src="holder.js/100%x200" 
-                                        src="<%= @dinner.image.url%>"
+                                        src="<%= @dinner.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
                                             <h3>저녁 </h3>
-                                            <p><%= @dinner.content%></p> 
-                                            <h4 style = "color: red">칼로리: <%=@dinner.calorie%></h4>
+                                            <p><%= @dinner.content%></p>
+                                            <p>칼로리 정보</p><hr>
+                                            <%@dinner.foods.each do |f|%>
+                                                <p><%=f.name%> - <%=f.calorie%></p>
+                                            <%end%>
+                                            <h4 style = "color: red">총 칼로리: <%=@dinner.calorie%></h4>
                                     <%end%>
                                     </div> 
                                 </div> 
@@ -396,6 +408,7 @@
   </div>
 </div>
 <div id = "test"></div>
+<img id = "image" src ="">
 <div id = "test2"></div>
 <!--write post-->
 <script>
@@ -419,9 +432,9 @@
                 async: false
             })
             .done(function() { 
-                image_url = "http://calorie4-dreamchaser3.c9users.io/uploads/post/image/" + "<%=Post.last.id + 1 %>/" + image.name;
+                post_id = "<%=Post.last.id + 1 %>";
+                image_url = "http://calorie4-dreamchaser3.c9users.io/uploads/post/image/" + post_id + "/input.jpg";
                 connect(image_url);
-                //document.getElementById("test").innerHTML = image_url;
             }) 
         });
     });
