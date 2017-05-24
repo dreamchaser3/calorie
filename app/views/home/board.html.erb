@@ -107,7 +107,7 @@
                             <img class="img-circle pull-left" src="<%=@user.profile_img%>" alt="profile" 
                             style="height:60px;width:60px">
                             <div style="font-size:14pt;line-height:35px;color:black;margin-left:70px"><%=@user.username%>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%=p.title%>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=p.title%>
                             </div>
                             <span style="color:gray;margin-left:10px">
                                 <%=p.created_at.strftime("%Y-%m-%d")%> <%=p.created_at.strftime("%H:%M")%></span>
@@ -119,11 +119,16 @@
                         <!-- menu -->
                         <div class="panel-heading">
                             <span style="font-size:12pt;font-weight:bold"><%=p.content%></span><hr>
-                            <span>칼로리 정보</span><br><br>
+                            <hr style = "border-color: gray">
+                            <% @i = 1 %>
                             <%p.foods.each do |f|%>
-                                <span><%=f.name%> - <%=f.calorie%></span>
+                                <span style = "font-size: 120%; font-weight: bold"><%=f.name%>&nbsp;&nbsp;<%=f.calorie%>kcal</span>
+                                <% if @i%2 == 0 && @i != p.foods.size%>
+                                    <br>
+                                <% end%>
+                                <% @i = @i + 1%>
                             <%end%>
-                            <span style="font-size:12pt;font-weight:bold;float:right"> 총 칼로리 : <%=p.calorie%>kcal</span>
+                            <span style="font-size:140%;color: red;font-weight:bold;float:right"> 총 칼로리 : <%=p.calorie%>kcal</span>
                         </div>    
                         <!--replies-->
                         <div class="panel-heading">

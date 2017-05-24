@@ -189,7 +189,7 @@
                                         <div class="caption" align = "center"> 
                                             <h3 style = "font-weight: bold">아침 </h3>
                                             
-                                            <p><%= @breakfast.content%></p><br><hr>
+                                            <p><%= @breakfast.content%></p><hr>
                                             <%@breakfast.foods.each do |f|%>
                                                 <p style = "font-size: 130%; font-weight: bold"><%=f.name%>&nbsp; &nbsp;<%=f.calorie%>kcal</p>
                                             <%end%><hr>
