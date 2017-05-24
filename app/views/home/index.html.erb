@@ -177,7 +177,7 @@
                                         src="http://mblogthumb2.phinf.naver.net/20160803_97/yaungjun3_1470169731758A1OQm_PNG/%C4%AB%C4%AB%BF%C0_%C0%CC%B8%F0%C6%BC%C4%DC032.png?type=w2"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
-                                            <h3>아침 </h3>
+                                            <h3 style = "font-weight: bold">아침 </h3>
                                             
                                             <p>식사를 등록해주세요.</p> 
                                             <p class="btn btn-primary" data-toggle="modal" data-target="#myModal0" role="button">등록</p> 
@@ -187,14 +187,13 @@
                                         src="<%= @breakfast.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
-                                            <h3>아침 </h3>
+                                            <h3 style = "font-weight: bold">아침 </h3>
                                             
-                                            <p><%= @breakfast.content%></p><br>
-                                            <p>칼로리 정보</p><hr>
+                                            <p><%= @breakfast.content%></p><br><hr>
                                             <%@breakfast.foods.each do |f|%>
-                                                <p><%=f.name%> - <%=f.calorie%></p>
-                                            <%end%>
-                                            <h4 style = "color: red">총 칼로리: <%=@breakfast.calorie%></h4>
+                                                <p style = "font-size: 130%; font-weight: bold"><%=f.name%>&nbsp; &nbsp;<%=f.calorie%>kcal</p>
+                                            <%end%><hr>
+                                            <h4 style = "color: red; font-weight: bold">총 칼로리: <%=@breakfast.calorie%>kcal</h4>
                                     <%end%>
                                     </div> 
                                 </div> 
@@ -206,7 +205,7 @@
                                     src="http://mblogthumb2.phinf.naver.net/20160803_97/yaungjun3_1470169731758A1OQm_PNG/%C4%AB%C4%AB%BF%C0_%C0%CC%B8%F0%C6%BC%C4%DC032.png?type=w2"
                                     data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                     <div class="caption" align = "center"> 
-                                        <h3>점심</h3> 
+                                        <h3 style = "font-weight: bold">점심</h3> 
                                         <p>식사를 등록해주세요.</p> 
                                         <p class="btn btn-primary" data-toggle="modal" data-target="#myModal1" role="button">등록</p> 
                                     <% else %>
@@ -215,14 +214,13 @@
                                         src="<%= @lunch.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
-                                            <h3>점심 </h3>
+                                            <h3 style = "font-weight: bold">점심 </h3>
                                             
-                                            <p><%= @lunch.content%></p>
-                                            <p>칼로리 정보</p><hr>
+                                            <p><%= @lunch.content%></p><hr>
                                             <%@lunch.foods.each do |f|%>
-                                                <p><%=f.name%> - <%=f.calorie%></p>
-                                            <%end%>
-                                            <h4 style = "color: red">총 칼로리: <%=@lunch.calorie%></h4>
+                                                <p style = "font-size: 130%; font-weight: bold"><%=f.name%>&nbsp; &nbsp;<%=f.calorie%>kcal</p>
+                                            <%end%><hr>
+                                            <h4 style = "color: red; font-weight: bold">총 칼로리: <%=@lunch.calorie%>kcal</h4>
                                     <%end%>
                                     </div> 
                                 </div> 
@@ -234,7 +232,7 @@
                                     src="http://mblogthumb2.phinf.naver.net/20160803_97/yaungjun3_1470169731758A1OQm_PNG/%C4%AB%C4%AB%BF%C0_%C0%CC%B8%F0%C6%BC%C4%DC032.png?type=w2"
                                     data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                     <div class="caption" align = "center"> 
-                                        <h3>저녁</h3> 
+                                        <h3 style = "font-weight: bold">저녁</h3> 
                                         <p>식사를 등록해주세요.</p> 
                                         <p class="btn btn-primary" data-toggle="modal" data-target="#myModal2" role="button">등록</p> 
                                     <% else %>
@@ -243,13 +241,13 @@
                                         src="<%= @dinner.output_url%>"
                                         data-holder-rendered="true" style="height: 200px; width: 100%; display: block;"> 
                                         <div class="caption" align = "center"> 
-                                            <h3>저녁 </h3>
-                                            <p><%= @dinner.content%></p>
-                                            <p>칼로리 정보</p><hr>
+                                            <h3 style = "font-weight: bold">저녁 </h3>
+                                            <p><%= @dinner.content%></p><hr>
+                                            
                                             <%@dinner.foods.each do |f|%>
-                                                <p><%=f.name%> - <%=f.calorie%></p>
-                                            <%end%>
-                                            <h4 style = "color: red">총 칼로리: <%=@dinner.calorie%></h4>
+                                                <p style = "font-size: 130%; font-weight: bold"><%=f.name%>&nbsp; &nbsp;<%=f.calorie%>kcal</p>
+                                            <%end%><hr>
+                                            <h4 style = "color: red; font-weight: bold">총 칼로리: <%=@dinner.calorie%>kcal</h4>
                                     <%end%>
                                     </div> 
                                 </div> 
