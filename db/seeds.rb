@@ -18,7 +18,7 @@ User.create(email:'test@naver.com',password:"123456",username:"테스트",backgr
             profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")
 User.create(email:'test2@naver.com',password:"123456",username:"테스트2",background_img:"http://cafefiles.naver.net/20130501_85/hiyo_o__13674100081975IVsD_JPEG/-1568620571.jpg",
             profile_img:"http://cafefiles.naver.net/20110812_96/imagine0331_13131321541223AeYL_jpg/fave_21_imagine0331.jpg")
-
+User.create(email:'demo@gmail.com', password:"123456", username:"김현우")
 UserFriend.create(user_email:"kimhyunwoo@naver.com",friend_email:'wondangjk@naver.com',status:1)
 UserFriend.create(user_email:'ohhyunju@naver.com',friend_email:"wondangjk@naver.com",status:0)
 UserFriend.create(user_email:'dreamchaser3@naver.com',friend_email:"test@naver.com",status:1)

@@ -21,7 +21,10 @@ class HomeController < ApplicationController
     if(!classes.nil?)
       classes.each do |c|
         food = Food.find(c)
-        @p.foods.push(food)
+        pf = PostFood.new
+        pf.post_id = @p.id
+        pf.food_id = c
+        pf.save
         @p.calorie += food.calorie
       end 
     end
